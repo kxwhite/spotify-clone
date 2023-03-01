@@ -1,0 +1,90 @@
+.footer--main {
+  background-color: #1B1B1B;
+  height: 80px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Album Info CSS */
+.footer--album-container {
+  flex: 0.3;
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  color: whitesmoke;
+  max-width: 300px;
+}
+
+.footer--artist-info {
+  margin: 0 12px;
+}
+
+.footer--song-name {
+  font-size: 14px;
+}
+
+.footer--artist-name {
+  font-size: 12px;
+  color: #767676;
+}
+
+.footer--album {
+  width: 50px;
+  height: 50px;
+}
+
+.footer--favourite-icon {
+  font-size: 2px;
+}
+
+/* Playback Controls */
+.footer--controls {
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  max-width: 600px;
+  margin: 10px 20px;
+}
+
+.footer--controls-icons {
+  flex: 0.4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer--icon-style:hover {
+  color: whitesmoke;
+}
+
+.footer--play-btn:hover {
+  transition: scale 0.2s ease-in-out;
+  scale: 1.2;
+}
+
+.footer--duration-slider {
+  display: flex;
+  align-items: center;
+}
+/* Volume CSS */
+.footer--volume-controls {
+  flex: 0.3;
+  display: flex;
+  align-items: center;
+  max-width: 300px;
+  margin: 10px;
+}
+
+.footer--volume {
+  margin: 0 10px;
+}
+
+.footer--icon-style {
+  margin: 4px;
+}
