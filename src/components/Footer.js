@@ -41,7 +41,7 @@ function Footer() {
           <strong className='footer--song-name'>What's the Use?</strong>
           <p className='footer--artist-name'>Mac Miller</p>
         </div>
-        <FavoriteBorderOutlinedIcon sx={{ color: '#767676', fontSize: 16}} className='footer--favourite-icon'/>
+        <FavoriteBorderOutlinedIcon sx={{ color: '#767676', fontSize: 16}} className='footer--icon-style'/>
       </div>
 
       <div className="footer--controls">

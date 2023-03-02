@@ -36,10 +36,6 @@
   height: 50px;
 }
 
-.footer--favourite-icon {
-  font-size: 2px;
-}
-
 /* Playback Controls */
 .footer--controls {
   flex-grow: 1;
