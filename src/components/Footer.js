@@ -11,7 +11,7 @@ import NotesIcon from "@mui/icons-material/Notes";
 import DevicesIcon from "@mui/icons-material/Devices";
 import OpenInFullIcon from "@mui/icons-material/OpenInFull";
 import { VolumeDown, VolumeUp } from '@mui/icons-material';
-import { Box, Slider, styled, Typography, useTheme } from '@mui/material';
+import { Slider, styled, Typography, useTheme } from '@mui/material';
 
 
 const TinyText = styled(Typography)({
@@ -41,7 +41,7 @@ function Footer() {
           <strong className='footer--song-name'>What's the Use?</strong>
           <p className='footer--artist-name'>Mac Miller</p>
         </div>
-        <FavoriteBorderOutlinedIcon sx={{ color: '#767676', fontSize: 16}} className='footer--favourite-icon'/>
+        <FavoriteBorderOutlinedIcon sx={{ color: '#767676', fontSize: 16}} className='footer--icon-style'/>
       </div>
 
       <div className="footer--controls">
