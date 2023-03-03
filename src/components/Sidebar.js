@@ -1,7 +1,8 @@
 import React from 'react'
 import logo from '../assets/sidebar_assets/Spotify_Logo_RGB_White.png'
 import './Sidebar.css'
-import { Home, Search, LibraryMusic, AddBox, Favorite, Language } from '@mui/icons-material'
+import { Home, Search, LibraryMusic, AddBox, Favorite } from '@mui/icons-material'
+import CustomizedDialogs from './common/DialogModal'
 
 function Sidebar() {
   return (
@@ -26,7 +27,7 @@ function Sidebar() {
       </div>
       <div className="sidebar--cookies-country">
         <a className='sidebar--cookies'>Cookies</a>
-        <button className='sidebar--language'><Language className='sidebar--globe-icon'/>English</button>
+        <CustomizedDialogs />
       </div>
     </div>
   )

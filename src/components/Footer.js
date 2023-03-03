@@ -11,7 +11,7 @@ import NotesIcon from "@mui/icons-material/Notes";
 import DevicesIcon from "@mui/icons-material/Devices";
 import OpenInFullIcon from "@mui/icons-material/OpenInFull";
 import { VolumeDown, VolumeUp } from '@mui/icons-material';
-import { Box, Slider, styled, Typography, useTheme } from '@mui/material';
+import { Slider, styled, Typography, useTheme } from '@mui/material';
 
 
 const TinyText = styled(Typography)({
