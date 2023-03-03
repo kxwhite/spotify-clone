@@ -1,9 +1,9 @@
 import React from "react";
-import spotify from "../images/spotify.png";
-import fbimg from "../images/fbimg.png";
-import appleimg from "../images/appleimg.png";
-import googleimg from "../images/googleimg.png";
-import "../CSS/login.css";
+import spotify from "../assets/login_assets/spotify.png";
+import fbimg from "../assets/login_assets/fbimg.png";
+import appleimg from "../assets/login_assets/appleimg.png";
+import googleimg from "../assets/login_assets/googleimg.png";
+import "../styles/login.css";
 function Login() {
   return (
     <div>

@@ -1,5 +1,5 @@
 
-import Login from "./component/Login";
+import Login from "./pages/Login";
 import './App.css';
 import Footer from './components/Footer';
 import Sidebar from './components/Sidebar';

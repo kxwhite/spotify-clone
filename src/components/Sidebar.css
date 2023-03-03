@@ -3,9 +3,13 @@
   background-color: black;
   width: 240px;
   height: 100vh;
+  /* display: flex;
+  flex-direction: column;
+  flex: 0.2; */
 }
 
 .sidebar--logo {
+  object-fit: contain;
   width: 130px;
   margin: 26px;
 }
