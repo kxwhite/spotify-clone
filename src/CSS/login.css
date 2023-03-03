@@ -1,0 +1,207 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.imgNav {
+  border: 1px solid lightgray;
+  border-left: none;
+  border-right: none;
+  position: relative;
+  width: 100vw;
+}
+img {
+  position: relative;
+  left: -20px;
+  width: 200px;
+  height: 80px;
+}
+.fmessage {
+  position: relative;
+  top: 30px;
+}
+.message {
+  text-align: center;
+}
+.formContainer {
+  position: relative;
+  top: 50px;
+  width: 50vw;
+  height: 120px;
+  left: 250px;
+}
+
+.spanImgfb {
+  position: absolute;
+  width: 35px;
+  height: 30px;
+  border-radius: 50%;
+  left: 580px;
+  top: 150px;
+}
+.spanImgapple {
+  position: absolute;
+  width: 35px;
+  height: 30px;
+  border-radius: 50%;
+  left: 600px;
+  top: 223px;
+}
+.spanImggoogle {
+  position: absolute;
+  width: 35px;
+  height: 30px;
+  border-radius: 50%;
+  left: 600px;
+  top: 290px;
+}
+.fbbtn {
+  position: absolute;
+  left: 500px;
+  top: 140px;
+  width: 450px;
+  height: 55px;
+  border-radius: 25px;
+  background-color: rgba(31, 110, 229, 0.996);
+  color: white;
+  font-weight: bold;
+}
+.applebtn {
+  position: absolute;
+  left: 500px;
+  top: 210px;
+  width: 450px;
+  height: 55px;
+  border-radius: 25px;
+  background-color: rgb(16, 15, 15);
+  color: white;
+  font-weight: bold;
+}
+.googlebtn {
+  position: absolute;
+  left: 500px;
+  top: 280px;
+  width: 450px;
+  height: 55px;
+  border-radius: 25px;
+  background-color: white;
+  color: rgba(54, 52, 52, 0.252);
+  font-weight: bold;
+}
+
+.remainingForm {
+  position: relative;
+  height: 115vh;
+}
+body {
+  overflow-x: hidden;
+}
+#span1 {
+  width: 200px;
+  border: 1px solid rgb(176, 173, 173);
+  position: relative;
+  top: 270px;
+  left: 480px;
+}
+#span2 {
+  width: 200px;
+  border: 1px solid rgb(176, 173, 173);
+  position: relative;
+  left: 750px;
+  top: 270px;
+}
+.or {
+  position: absolute;
+  top: 276px;
+  left: 705px; /* */
+}
+.emailLabel {
+  position: relative;
+  font-weight: bold;
+  top: 300px;
+  left: 480px;
+}
+.passwordLabel {
+  position: relative;
+  top: 400px;
+  font-weight: bold;
+  left: -196px;
+}
+.emailInput {
+  position: relative;
+  font-weight: bold;
+  top: 340px;
+  left: 273px;
+  width: 470px;
+  height: 45px;
+  text-align: left;
+}
+.passwordInput {
+  position: relative;
+  top: 440px;
+  left: -270px;
+  width: 470px;
+  height: 45px;
+}
+input::placeholder {
+  position: relative;
+  left: 15px;
+}
+.forgotLink {
+  position: relative;
+  top: 500px;
+  left: -740px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.forgotLink:hover {
+  color: green;
+}
+.remember {
+  position: relative;
+  top: 498px;
+  left: -70px;
+}
+.check {
+  position: relative;
+  top: 500px;
+  left: -200px;
+  transform: scale(1.4);
+}
+.check:hover {
+  color: rgb(67, 231, 45);
+}
+.btnLogin {
+  position: relative;
+  top: 495px;
+  left: 145px;
+  background-color: rgb(67, 231, 45);
+  border-radius: 25px;
+  width: 100px;
+  height: 50px;
+  font-weight: bold;
+}
+#span3 {
+  width: 480px;
+  border: 1px solid rgb(176, 173, 173);
+  position: relative;
+  top: 515px;
+  left: 470px;
+}
+.account {
+  position: relative;
+  top: 550px;
+  left: 10px;
+}
+
+.signup {
+  position: absolute;
+  left: 470px;
+  font-size: 18px;
+  top: 700px;
+  width: 480px;
+  height: 55px;
+  border-radius: 25px;
+  background-color: white;
+  color: rgba(6, 6, 6, 0.572);
+  font-weight: bold;
+}
