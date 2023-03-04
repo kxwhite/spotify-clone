@@ -1,0 +1,64 @@
+.nomatch--container {
+  background-color: #121212;
+  margin: auto;
+  text-align: center;
+  height: 100vh;
+}
+
+.nomatch--img {
+  margin-top: 40%;
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 40px;
+}
+
+.nomatch--title {
+  color: whitesmoke;
+  margin-bottom: 20px;
+  font-size: 46px;
+}
+
+.nomatch--para {
+  color: whitesmoke;
+  margin-bottom: 50px;
+}
+
+/* Buttons */
+.nomatch--btns {
+  display: flex;
+  flex-direction: column;
+}
+
+.nomatch--link {
+  font-size: 16px;
+  font-weight: 700;
+  color: whitesmoke;
+  margin-right: 30px;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.nomatch--link:hover {
+  transition: all 0.2s ease-in-out;
+  text-decoration: underline;
+}
+
+.nomatch--btn {
+  background-color: whitesmoke;
+  padding: 16px 32px;
+  color: #101010;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 500px;
+  border: none;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+}
+
+.nomatch--btn:hover {
+  transition: all 0.2 ease-in-out;
+  scale: 1.05;
+}

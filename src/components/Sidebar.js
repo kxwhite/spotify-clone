@@ -2,6 +2,7 @@ import React from 'react'
 import logo from '../assets/sidebar_assets/Spotify_Logo_RGB_White.png'
 import './Sidebar.css'
 import { Home, Search, LibraryMusic, AddBox, Favorite } from '@mui/icons-material'
+import { Link } from "react-router-dom";
 import CustomizedDialogs from './common/DialogModal'
 
 function Sidebar() {
@@ -9,9 +10,9 @@ function Sidebar() {
     <div className='sidebar--container'>
       <img src={logo} alt="Spotify Logo" className='sidebar--logo'/>
       <div className="sidebar--links">
-        <div className='sidebar--link-cont'><Home className='sidebar--icons' sx={{ fontSize: 30 }}/><a className='sidebar--link'>Home</a></div>
-        <div className='sidebar--link-cont'><Search className='sidebar--icons' sx={{ fontSize: 30 }}/><a className='sidebar--link'>Search</a></div>
-        <div className='sidebar--link-cont'><LibraryMusic className='sidebar--icons' sx={{ fontSize: 30 }}/><a className='sidebar--link'>Your Library</a></div>
+        <div className='sidebar--link-cont'><Home className='sidebar--icons' sx={{ fontSize: 30 }}/><Link className='sidebar--link'>Home</Link></div>
+        <div className='sidebar--link-cont'><Search className='sidebar--icons' sx={{ fontSize: 30 }}/><Link className='sidebar--link'>Search</Link></div>
+        <div className='sidebar--link-cont'><LibraryMusic className='sidebar--icons' sx={{ fontSize: 30 }}/><Link className='sidebar--link'>Your Library</Link></div>
       </div>
 
       <div className="sidebar--playlists">
@@ -20,14 +21,14 @@ function Sidebar() {
 
         <div className='sidebar--link-cont sidebar--create'>
           <AddBox className='sidebar--icons' sx={{ fontSize: 30 }}/>
-          <a className='sidebar--link'>Create Playlist</a>
+          <Link className='sidebar--link'>Create Playlist</Link>
         </div>
 
         <div className='sidebar--link-cont sidebar--create sidebar--opacity'>
           <div className='sidebar--fav'>
             <Favorite className='sidebar--icons sidebar--fav-icon' sx={{ fontSize: 16 }}/>
           </div>
-          <a className='sidebar--link'>Liked Songs</a>
+          <Link className='sidebar--link'>Liked Songs</Link>
         </div>
 
         <hr className='sidebar--hr'/>
@@ -40,7 +41,7 @@ function Sidebar() {
       </div>
 
       <div className="sidebar--cookies-country">
-        <a className='sidebar--cookies'>Cookies</a>
+        <Link className='sidebar--cookies'>Cookies</Link>
         <CustomizedDialogs />
       </div>
     </div>

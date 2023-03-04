@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link, useNavigate } from "react-router-dom";
 import './Navbar.css'
 import { NavigateBefore, NavigateNext } from '@mui/icons-material';
 import { Avatar } from '@mui/material';
@@ -7,11 +8,13 @@ import AccountMenu from './common/AccountMenu';
 
 function Navbar() {
   const login = false;
+  const navigate = useNavigate();
+
   return (
     <div className='navbar--container'>
       <div className="nav--arrow-container">
-        <a><NavigateBefore sx={{ color: '#A4A4A4', fontSize: 40 }} className='nav--back-arrow'/></a>
-        <a><NavigateNext sx={{ color: '#A4A4A4', fontSize: 40 }} className='nav--next-arrow'/></a>
+        <Link><NavigateBefore sx={{ color: '#A4A4A4', fontSize: 40 }} className='nav--back-arrow'/></Link>
+        <Link><NavigateNext sx={{ color: '#A4A4A4', fontSize: 40 }} className='nav--next-arrow'/></Link>
       </div>
 
       {login ?
@@ -22,8 +25,8 @@ function Navbar() {
         </div>
           :
         <div className="nav--login-btns">
-          <a className='nav--sign-up'>Sign up</a>
-          <button className='nav--btn-login'>Log in</button>
+          <Link className='nav--sign-up'>Sign up</Link>
+          <button className='nav--btn-login' onClick={() => navigate('login')}>Log in</button>
         </div>
       }
     </div>

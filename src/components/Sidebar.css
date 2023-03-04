@@ -19,6 +19,10 @@
   flex-direction: column;
 }
 
+.sidebar--link {
+  color: #A4A4A4;
+}
+
 .sidebar--link-cont {
   display: flex;
   align-items: center;
