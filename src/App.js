@@ -1,16 +1,13 @@
-
-import Login from "./pages/Login";
 import './App.css';
-import Footer from './components/Footer';
-import Sidebar from './components/Sidebar';
+import Login from "./pages/Login";
+import Main from "./pages/Main";
 
 
 function App() {
   return (
     <div className="App">
-      <Sidebar />
-      <Login />
-      <Footer />
+      {/* <Login /> */}
+      <Main />
     </div>
   );
 }

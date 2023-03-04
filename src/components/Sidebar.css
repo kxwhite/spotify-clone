@@ -3,9 +3,9 @@
   background-color: black;
   width: 240px;
   height: 100vh;
-  /* display: flex;
+  display: flex;
   flex-direction: column;
-  flex: 0.2; */
+  flex: 0.2;
 }
 
 .sidebar--logo {
@@ -50,6 +50,9 @@
   color: whitesmoke;
   cursor: pointer;
 }
+.sidebar--opacity + .sidebar--fav {
+  opacity: 70%;
+}
 
 .sidebar--fav {
   width: 25px;
@@ -61,7 +64,6 @@
   margin-right: 10px;
   margin-left: 3px;
   border-radius: 3px;
-  opacity: 70%;
   background: rgb(57,19,170);
   background: linear-gradient(145deg, rgba(57,19,170,1) 0%, rgba(9,9,121,1) 35%, rgba(0,255,180,1) 100%);
 }
@@ -71,7 +73,7 @@
   margin-right: auto;
 }
 
-.sidebar--create:hover, .sidebar--link:hover, .sidebar--fav:hover {
+.sidebar--opacity:hover {
   transition: all 0.6s ease;
   opacity: 100%;
 }
@@ -120,10 +122,14 @@
 
 .sidebar--cookies {
   color: #A4A4A4;
-  font-size: 12px;
-  text-decoration: underline;
+  font-size: 11px;
   margin-bottom: 50px;
   cursor: pointer;
+}
+
+.sidebar--cookies:hover {
+  transition: all 0.2s ease-in-out;
+  text-decoration: underline;
 }
 
 .sidebar--globe-icon {
