@@ -8,7 +8,7 @@ function Login() {
   return (
     <div>
       <div className="imgNav">
-        <img src={spotify} alt="" />
+        <img src={spotify} alt="" className="logoImg"/>
       </div>
       <div className="fmessage">
         <h4 className="message">To continue, log in to Spotify</h4>
