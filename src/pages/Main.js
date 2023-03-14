@@ -2,6 +2,7 @@ import "../styles/Main.css";
 import Footer from "../components/Footer";
 import Sidebar from "../components/Sidebar";
 import Navbar from "../components/Navbar";
+import React from "react";
 
 function Main() {
   return (
