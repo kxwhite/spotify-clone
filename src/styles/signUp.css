@@ -2,19 +2,19 @@
   overflow-x: hidden;
 }
 
-@media all and (min-width: 1405px) {
+@media all and (min-width: 1200px) {
   .part1 {
     position: relative;
-    top: 40px;
+    top: 70px;
   }
   .part2 {
     position: relative;
     top: 60px;
   }
-  img {
+  .img {
     width: 10%;
     position: relative;
-    left: 600px;
+    left: 580px;
   }
   .header {
     position: relative;
@@ -22,20 +22,18 @@
   }
   .spanImgfb {
     position: absolute;
-    width: 35px;
-    height: 30px;
-    border-radius: 50%;
-    left: 590px;
-    top: 230px;
+    width: 15px;
+    height: 20px;
+    left: 600px;
+    top: 237px;
   }
 
   .spanImggoogle {
     position: absolute;
-    width: 35px;
-    height: 30px;
-    border-radius: 50%;
-    left: 600px;
-    top: 310px;
+    width: 15px;
+    height: 20px;
+    left: 610px;
+    top: 320px;
   }
   .fbbtn {
     position: absolute;
@@ -68,7 +66,7 @@
     width: 200px;
     border: 1px solid rgb(176, 173, 173);
     position: relative;
-    top: 240px;
+    top: 290px;
     left: 480px;
   }
   #span2 {
@@ -76,88 +74,88 @@
     border: 1px solid rgb(176, 173, 173);
     position: relative;
     left: 750px;
-    top: 240px;
+    top: 290px;
   }
   .or {
     position: absolute;
-    top: 210px;
-    left: 710px; /* */
+    top: 280px;
+    left: 700px; /* */
     color: rgb(176, 173, 173);
   }
   .signUp {
     position: relative;
-    top: 250px;
-    left: 600px;
+    top: 320px;
+    left: 550px;
   }
   .emailLabel {
     position: relative;
     font-weight: bold;
-    top: 250px;
-    left: 420px;
-  }
-  .passwordLabel {
-    position: relative;
-    top: 400px;
-    font-weight: bold;
-    left: -200px;
-  }
-  .passwordInput {
-    position: relative;
-    font-weight: bold;
-    top: 440px;
-    left: -350px;
-    width: 470px;
-    height: 45px;
+    top: 320px;
+    left: 300px;
   }
   .emailInput {
     position: relative;
     font-weight: bold;
-    top: 300px;
-    left: 280px;
+    top: 360px;
+    left: 150px;
     width: 470px;
     height: 45px;
     text-align: left;
   }
-
   .emailLabel1 {
     position: relative;
     font-weight: bold;
-    top: 305px;
-    left: 420px;
+    top: 360px;
+    left: 300px;
   }
   .emailInput1 {
     position: relative;
     font-weight: bold;
-    top: 350px;
-    left: 280px;
+    top: 400px;
+    left: 150px;
     width: 470px;
     height: 45px;
     text-align: left;
   }
+  .passwordLabel {
+    position: relative;
+    top: 440px;
+    font-weight: bold;
+    left: -310px;
+  }
+  .passwordInput {
+    position: relative;
+    font-weight: bold;
+    top: 480px;
+    left: -470px;
+    width: 470px;
+    height: 45px;
+  }
+
   .profileLabel {
     position: absolute;
     font-weight: bold;
-    top: 620px;
-    left: 420px;
+    top: 610px;
+    left: 290px;
   }
   .profileInput {
     position: relative;
     font-weight: bold;
-    top: 480px;
-    left: 420px;
+    top: 520px;
+    left: 280px;
     width: 470px;
     height: 45px;
     text-align: left;
   }
   .yearLabel {
     position: absolute;
-    top: 790px;
-    left: 780px;
+    top: 770px;
+    left: 650px;
   }
   .yearInput {
     position: relative;
-    top: 460px;
-    left: 470px;
+    top: 590px;
+    left: 330px;
     width: 80px;
     height: 46px;
   }
@@ -165,105 +163,166 @@
     position: relative;
     left: 15px;
   }
-  form {
+  .form {
     position: relative;
-    height: 200vh;
+    top: 20px;
+    height: 220vh;
+
+    margin: auto;
   }
-  h6 {
+  .small {
     position: relative;
-    top: 460px;
-    left: 420px;
+    top: 525px;
+    left: 290px;
     font-weight: lighter;
     font-size: small;
   }
   .dob {
     position: relative;
-    top: 450px;
-    left: 420px;
+    top: 550px;
+    left: 290px;
   }
   .gender {
     position: relative;
-    top: 470px;
-    left: 420px;
+    top: 630px;
+    left: 295px;
   }
   .dd {
     position: relative;
-    top: 450px;
-    left: 420px;
+    top: 580px;
+    left: 290px;
   }
   .day {
     position: relative;
-    top: 460px;
-    left: 420px;
+    top: 590px;
+    left: 280px;
     width: 80px;
     height: 40px;
   }
   .month {
     position: relative;
-    top: 420px;
-    left: 470px;
+    top: 550px;
+    left: 320px;
   }
   .months {
     position: relative;
-    top: 460px;
-    left: 420px;
+    top: 590px;
+    left: 250px;
     width: 180px;
     height: 48px;
   }
   .male {
     position: relative;
-    top: 460px;
+    top: 660px;
     font-weight: 500;
-    left: 429px;
+    left: 300px;
   }
   .maleRadio {
     position: relative;
-    top: 460px;
-    left: 412px;
+    top: 660px;
+    left: 290px;
   }
   .female {
     position: relative;
-    top: 460px;
+    top: 660px;
     font-weight: 500;
-    left: 470px;
+    left: 350px;
   }
   .femaleRadio {
     position: relative;
-    top: 460px;
-    left: 460px;
+    top: 660px;
+    left: 340px;
   }
   .nonbinaryRadio {
     position: relative;
-    top: 460px;
-    left: 490px;
+    top: 660px;
+    left: 380px;
   }
   .nonbinary {
     position: relative;
-    top: 460px;
+    top: 660px;
     font-weight: 500;
-    left: 500px;
+    left: 390px;
   }
   .otherRadio {
     position: relative;
-    top: 460px;
-    left: 535px;
+    top: 660px;
+    left: 415px;
   }
   .other {
     position: relative;
-    top: 460px;
+    top: 660px;
     font-weight: 500;
-    left: 550px;
+    left: 430px;
   }
 
   .preferRadio {
     position: relative;
-    top: 470px;
-    left: 412px;
+    top: 670px;
+    left: 290px;
   }
   .prefer {
     position: relative;
-    top: 470px;
+    top: 670px;
     font-weight: 500;
-    left: 430px;
+    left: 300px;
+  }
+
+  .labelmessage {
+    position: relative;
+    top: 720px;
+    left: 170px;
+    font-size: small;
+  }
+  .checkbox1 {
+    position: relative;
+    top: 720px;
+    left: -230px;
+  }
+  .labelmessage0 {
+    position: relative;
+    top: 750px;
+    left: -220px;
+    font-size: 12px;
+    width: 30px;
+  }
+  .checkbox0 {
+    position: relative;
+    top: 750px;
+    left: 160px;
+  }
+  .spot {
+    position: relative;
+    top: -340px;
+    font-size: 10px;
+    left: 290px;
+  }
+  .learn {
+    position: relative;
+    top: -320px;
+    font-size: 10px;
+    left: 290px;
+  }
+  .a {
+    color: lightgreen;
+  }
+
+  .button {
+    position: absolute;
+    left: 580px;
+    top: 1330px;
+    width: 140px;
+    height: 55px;
+    border-radius: 25px;
+    background-color: rgb(11, 223, 11);
+    color: black;
+    font-weight: bold;
+    font-size: medium;
+  }
+
+  .h3 {
+    position: absolute;
+    top: 1400px;
+    left: 550px;
   }
 }

@@ -95,7 +95,7 @@ export default function ContainerSignUp() {
         <label className="labelmessage0">
           Share my registration data with Spotify's content providers for
           marketing purposes. Note that your data may be transferred to a
-          country outside of the EEA as described in our privacy policy.
+          country outside of the EEA as <br /> described in our privacy policy.
         </label>
       </form>
       <h5 className="spot">
