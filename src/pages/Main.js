@@ -2,13 +2,15 @@ import "../styles/Main.css";
 import Footer from "../components/Footer";
 import Sidebar from "../components/Sidebar";
 import Navbar from "../components/Navbar";
+import BodySkeleton from "../components/common/BodySkeleton";
 
 function Main() {
   return (
     <div className="main--container">
-      <Navbar />
       <div className="main--body">
         <Sidebar />
+        <Navbar />
+        <BodySkeleton />
       </div>
       <Footer />
     </div>
