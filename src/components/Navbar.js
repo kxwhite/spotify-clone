@@ -25,7 +25,7 @@ function Navbar() {
         </div>
           :
         <div className="nav--login-btns">
-          <Link className='nav--sign-up'>Sign up</Link>
+          <Link to="/signup" className='nav--sign-up'>Sign up</Link>
           <button className='nav--btn-login' onClick={() => navigate('login')}>Log in</button>
         </div>
       }
