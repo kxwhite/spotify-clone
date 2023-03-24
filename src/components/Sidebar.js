@@ -8,7 +8,9 @@ import CustomizedDialogs from './common/DialogModal'
 function Sidebar() {
   return (
     <div className='sidebar--container'>
-      <img src={logo} alt="Spotify Logo" className='sidebar--logo'/>
+      <Link to='/'>
+        <img src={logo} alt="Spotify Logo" className='sidebar--logo'/>
+      </Link>
       <div className="sidebar--links">
         <div className='sidebar--link-cont'><Home className='sidebar--icons' sx={{ fontSize: 30 }}/><Link className='sidebar--link'>Home</Link></div>
         <div className='sidebar--link-cont'><Search className='sidebar--icons' sx={{ fontSize: 30 }}/><Link className='sidebar--link'>Search</Link></div>

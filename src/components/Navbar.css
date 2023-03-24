@@ -2,16 +2,18 @@
 .navbar--container {
   background-color: #101010;
   height: 60px;
-  width: 80%;
+  width: 100%;
   position: fixed;
   top: 0;
   right: 0;
   display: flex;
   justify-content: space-between;
+  flex: 0.8;
+  z-index: -1;
 }
 
 .nav--arrow-container {
-  margin-left: 20px;
+  margin-left: 21%;
 }
 
 .nav--back-arrow, .nav--next-arrow {

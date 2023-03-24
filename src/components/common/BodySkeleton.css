@@ -1,0 +1,86 @@
+.skel--body {
+  padding: 30px;
+  padding-top: 90px;
+  height: 100vh;
+  overflow-y: overlay;
+  flex: 0.8;
+  background-color: #1E1E1E;
+  z-index: -2;
+}
+
+.skel--body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Top Container */
+.skel--top-container {
+  display: flex;
+  margin-right: 200px;
+}
+
+.skel--top-card {
+  display: flex;
+  margin-right: 2%;
+  width: 100%;
+}
+
+.skel--top-card:last-child {
+  margin-right: 20%;
+}
+
+.skel--square-overlap {
+  border-radius: 4px 0 0 4px;
+}
+
+.skel--overlap-container {
+  position: relative;
+  flex-grow: 2;
+}
+
+.skel--overlap-bottom {
+  border-radius: 0 4px 4px 0;
+}
+
+.skel--overlap-top {
+  position: absolute;
+  bottom: 50px;
+  left: 8%;
+}
+
+/* Bottom Container */
+.skel--bottom-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.skel--bottom-cards {
+  margin-right: 2%;
+  margin-bottom: 2%;
+}
+
+.skel--bottom-title {
+  margin-bottom: 2%;
+}
+
+.skel--bottom-sect {
+  position: relative;
+}
+
+.skel--card-img {
+  position: absolute;
+  top: 16px;
+  left: 20px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.skel--card-txt-container {
+  width: 170px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+
+.skel--card-txt2 {
+  margin-top: 4%;
+}
