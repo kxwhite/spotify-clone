@@ -77,14 +77,14 @@
 }
 
 .playlist--play-nav-left {
-  width: 15%;
+  width: 175px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 .playlist--play-nav-right {
-  width: 15%;
+  width: 175px;
   display: flex;
   align-items: center;
   justify-content: space-between;

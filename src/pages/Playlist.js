@@ -7,11 +7,6 @@ import { PlayCircle, DownloadForOffline, MoreHoriz, Search, ArrowDropDown, Acces
 import MusicRow from '../components/MusicRow';
 
 function Playlist() {
-  // const [color, setColor] = useState('#3cd6bf');
-
-  // const onColorChange = (updatedColor) => {
-  //   setColor(updatedColor);
-  // };
 
   const data = [
     {img: {img}, title: 'What\'s the Use?', artist: 'Mac Miller', album: 'Swimming', date: 'Mar 28, 2023', duration: '3:03'},
@@ -30,30 +25,6 @@ function Playlist() {
     {img: {img}, title: 'What\'s the Use?', artist: 'Mac Miller', album: 'Swimming', date: 'Mar 28, 2023', duration: '3:03'},
     {img: {img}, title: 'What\'s the Use?', artist: 'Mac Miller', album: 'Swimming', date: 'Mar 28, 2023', duration: '3:03'},
   ]
-
-  // const renderMusicRow = () => {
-  //   return (
-  //     data.map((d, index) => {
-  //       return (
-  //         <div key={index} className="playlist--table-row">
-  //           <MusicRow
-  //             i={index}
-  //             id={index + 1}
-  //             img={d.img}
-  //             title={d.title}
-  //             artist={d.artist}
-  //             album={d.album}
-  //             date={d.date}
-  //             duration={d.duration}
-  //           />
-  //         </div>
-  //       );
-  //     })
-  //   );
-  // }
-
-
-  // const [isHovering, setIsHovering] = useState(-1);
 
   return (
     <div className="playlist--body">
@@ -109,8 +80,6 @@ function Playlist() {
           {data.map((d, index) => {
             return (
               <div key={index}  className={`playlist--table-row`}
-              // className={`playlist--table-row ${isHovering === index ? "playlist--table-row-hover" : ""}`}
-              // onMouseEnter={() => setIsHovering(index)} onMouseLeave={() => setIsHovering(-1)}
               >
                 <MusicRow
                   i={index}
@@ -125,7 +94,6 @@ function Playlist() {
               </div>
             );
           })}
-          {/* {renderMusicRow()} */}
         </div>
         {/* <table className="playlist--table">
           <thead className='playlist--table-head'>
