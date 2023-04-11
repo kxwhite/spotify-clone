@@ -6,6 +6,7 @@
   bottom: 0;
   display: flex;
   justify-content: space-between;
+  z-index: 3;
 }
 
 /* Album Info CSS */

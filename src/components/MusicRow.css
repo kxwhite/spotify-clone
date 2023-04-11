@@ -1,0 +1,98 @@
+.musicrow--container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2%;
+  width: 100%;
+}
+
+.musicrow--first {
+  display: flex;
+  align-items: center;
+  width: 30%;
+}
+
+.musicrow--title-container {
+  display: flex;
+  align-items: center;
+}
+
+.musicrow--img {
+  width: 60px;
+  height: auto;
+}
+
+.musicrow--id, .musicrow--title {
+  color: #A4A4A4;
+  font-size: 15px;
+  font-weight: 700;
+  margin-right: 20px;
+}
+
+.musicrow--id {
+  text-align: right;
+}
+
+.musicrow--info {
+  margin: 0 20px;
+}
+
+.musicrow--artist-container {
+  display: flex;
+  align-items: center;
+  margin-top: 1px;
+}
+
+.musicrow--downarrow-btn {
+  margin-right: 6px;
+}
+
+.musicrow--artist {
+  color: #767676;
+  font-size: 14px;
+}
+
+.musicrow--album, .musicrow--date, .musicrow--duration {
+  color: #767676;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.musicrow--duration-container {
+  display: flex;
+}
+
+.musicrow--duration {
+  margin: 0 16px;
+}
+
+.musicrow--fav-icon, .musicrow--more-icon {
+  visibility: hidden;
+}
+
+.musicrow--play-icon {
+  display: none !important;
+}
+
+.musicrow--container-hover {
+  background-color: #292A2D;
+  border-radius: 4px;
+  padding: 10px;
+}
+.hover {
+  background-color: #292A2D;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.view {
+  background-color: #292A2D;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+/* .musicrow--container {
+  background-color: #292A2D;
+  border-radius: 4px;
+  padding: 10px;
+} */

@@ -1,0 +1,171 @@
+/* Main CSS */
+.playlist--body {
+  height: 100vh;
+  overflow-y: overlay;
+  flex: 0.8;
+  background-color: #1E1E1E;
+  z-index: -2;
+}
+
+.playlist--body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Top Section CSS */
+.playlist--top-section {
+  padding: 30px;
+  padding-top: 90px;
+  display: flex;
+  align-items: flex-end;
+  background: rgb(156, 43, 43);
+  background: linear-gradient(180deg, rgba(156, 43, 43, 1) 0%, rgba(85, 24, 24, 1) 100%);
+}
+
+.playlist--top-subsection {
+  margin-left: 3%;
+}
+
+.playlist--main-album {
+  width: 25%;
+  height: auto;
+}
+
+.playlist--caption {
+  text-transform: uppercase;
+  color: whitesmoke;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.playlist--title {
+  color: whitesmoke;
+  font-size: 92px;
+}
+
+.playlist--user-section {
+  display: flex;
+  align-items: center;
+  margin-top: 10%;
+}
+
+.playlist--user-name {
+  color: whitesmoke;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.playlist--user-info {
+  color: #A4A4A4;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Bottom Section CSS */
+.playlist--bottom-section {
+  height: 100%;
+  padding: 30px;
+  background: rgb(85, 24, 24);
+  background: linear-gradient(180deg, rgba(85, 24, 24, 1) 0%, rgba(18, 18, 18, 1) 100%);
+}
+
+/* Bottom Nav CSS */
+.playlist--play-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.playlist--play-nav-left {
+  width: 175px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.playlist--play-nav-right {
+  width: 175px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.playlist--recent-container {
+  display: flex;
+  align-items: center;
+}
+
+.playlist--recent-txt {
+  color: #767676;
+  font-size: 12px;
+  font-weight: 600;
+  margin-right: 4px;
+}
+
+/* bottom Table CSS */
+.playlist--table-header {
+  text-transform: uppercase;
+  color: #A4A4A4;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.playlist--table-head {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 18px;
+}
+
+.playlist--table-first {
+  display: flex;
+  align-items: center;
+}
+
+.playlist--table-header {
+  margin-right: 20px;
+}
+
+/* .playlist--table-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+} */
+
+.playlist--table-row {
+  /* overflow-y: scroll; */
+}
+
+.playlist--hr {
+  border: 0;
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(164, 164, 164, 0.302);
+  margin-top: 4px;
+}
+
+.playlist--clock {
+  margin-right: 32px;
+}
+
+.playlist--table-row:hover {
+  background-color: #292A2D;
+  border-radius: 4px;
+  padding: 10px;
+}
+.playlist--table-row-hover {
+  background-color: #292A2D;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.hoverable-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.hoverable-item:hover, .hoverable-show {
+  background-color: #292A2D;
+  border-radius: 4px;
+  padding: 10px;
+}

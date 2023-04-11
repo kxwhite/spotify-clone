@@ -213,15 +213,24 @@ input[type="checkbox"] {
   -moz-appearance: none;
   appearance: none;
 
+  position: relative;
   border: 1px solid #535353;
   border-radius: 2px;
-  width: 14px;
-  height: 14px;
+  width: 17px;
+  height: 17px;
   background-color: transparent;
 }
 
 input[type="checkbox"]:checked {
+  border: none;
+  color: white;
+  background-color: #1BD860;
+}
+
+input[type="checkbox"]:checked::after {
   content: "\2713";
+  position: absolute;
+  left: 3px;
   border: none;
   color: white;
   background-color: #1bd860;
