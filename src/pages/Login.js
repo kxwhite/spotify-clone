@@ -7,49 +7,57 @@ import "../styles/login.css";
 function Login() {
   return (
     <div>
-      <div className="imgNav">
-        <img src={spotify} alt="" className="logoImg"/>
+      <div className="img--container">
+        <img src={spotify} alt="" className="logoImg" />
       </div>
-      <div className="fmessage">
+      <div className="group--container">
         <h4 className="message">To continue, log in to Spotify</h4>
-      </div>
 
-      <div>
-        <button className="fbbtn">CONTINUE WITH FACEBOOK</button>
-        <img className="spanImgfb" src={fbimg} alt="" />
-        <button className="applebtn">CONTINUE WITH APPLE</button>
-        <img className="spanImgapple" src={appleimg} alt="" />
-        <button className="googlebtn">CONTINUE WITH GOOGLE</button>
-        <img className="spanImggoogle" src={googleimg} alt="" />
-      </div>
-      <div className="remainingForm">
-        <div id="span1"></div> <h4 className="or">OR</h4>
-        <div id="span2"></div>
-        <form>
-          <label className="emailLabel">Email address or username</label>
-          <input
-            className="emailInput"
-            type="text"
-            placeholder="Email address or username"
-          />
-          <label className="passwordLabel">Password</label>
-          <input
-            className="passwordInput"
-            type="password"
-            placeholder="Password"
-          />
-          <a className="forgotLink" href>
-            Forgot your password?
-          </a>
-          <div>
-            <label className="remember">Remember Me</label>
-            <input className="check" type="checkbox" />
-            <button className="btnLogin">LOG IN</button>
-            <div id="span3"></div>
-          </div>
-          <h3 className="account">Don't have an account?</h3>
-          <button className="signup">SIGN UP FOR SPOTIFY</button>
-        </form>
+        <div className="btns--container">
+          <button className="fbbtn login--btn">CONTINUE WITH FACEBOOK</button>
+          <img className="spanImgfb" src={fbimg} alt="" />
+          <button className="applebtn login--btn">CONTINUE WITH APPLE</button>
+          <img className="spanImgapple" src={appleimg} alt="" />
+          <button className="googlebtn login--btn">CONTINUE WITH GOOGLE</button>
+          <img className="spanImggoogle" src={googleimg} alt="" />
+        </div>
+
+        <div className="divider">
+          <hr className="hr" />
+          <h6 className="or">OR</h6>
+          <hr className="hr" />
+        </div>
+        <div className="form">
+          <form>
+            <div className="wrapper">
+              <label className="emailLabel">Email address or username</label>
+              <input
+                className="emailInput"
+                type="text"
+                placeholder="Email address or username"
+              />
+              <label className="passwordLabel">Password</label>
+              <input
+                className="passwordInput"
+                type="password"
+                placeholder="Password"
+              />{" "}
+              <a className="forgotLink" href>
+                Forgot your password?
+              </a>
+              <label className="remember">Remember Me</label>
+              <input className="check" type="checkbox" />
+              <button className="btnLogin">LOG IN</button>
+              <hr id="span3" />
+            </div>
+            <div className="wrap">
+              <h3 className="account">Don't have an account?</h3>{" "}
+              <button className="signup">SIGN UP FOR SPOTIFY</button>
+            </div>
+
+            {/** **/}
+          </form>
+        </div>
       </div>
     </div>
   );
