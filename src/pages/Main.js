@@ -6,12 +6,12 @@ import React from "react";
 // import BodySkeleton from "../components/common/BodySkeleton";
 import Playlist from "./Playlist";
 
-function Main() {
+function Main({CLIENT_ID, REDIRECT_URI, AUTH_ENDPOINT, RESPONSE_TYPE, token, setToken}) {
   return (
     <div className="main--container">
       <div className="main--body">
         <Sidebar />
-        <Navbar />
+        <Navbar token={token} setToken={setToken}/>
         {/* <BodySkeleton /> */}
         <Playlist />
       </div>

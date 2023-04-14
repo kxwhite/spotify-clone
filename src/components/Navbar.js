@@ -6,9 +6,14 @@ import { Avatar } from '@mui/material';
 import paul from "../assets/navbar_assets/paulrudd.jpeg";
 import AccountMenu from './common/AccountMenu';
 
-function Navbar() {
+function Navbar({token, setToken}) {
   const login = false;
   const navigate = useNavigate();
+
+  const handleLogout = () => {
+    setToken("");
+    window.localStorage.removeItem("token");
+  };
 
   return (
     <div className='navbar--container'>
@@ -26,7 +31,9 @@ function Navbar() {
           :
         <div className="nav--login-btns">
           <Link to="/signup" className='nav--sign-up'>Sign up</Link>
+          {!token ?
           <button className='nav--btn-login' onClick={() => navigate('login')}>Log in</button>
+          : <button onClick={handleLogout}>Log Out</button>}
         </div>
       }
     </div>

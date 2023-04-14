@@ -41,15 +41,6 @@ function Playlist() {
             <p className='playlist--user-info'>• 27 min</p>
           </div>
         </div>
-        {/* <div className='playlist--colour-picker'>
-          <h1>
-          Selected color:
-          {color}
-          </h1>
-          <div className=''>
-          <ReactColorPicker color={color} onChange={onColorChange} />
-          </div>
-        </div> */}
       </div>
       <div className="playlist--bottom-section">
         <div className="playlist--play-nav">
@@ -95,34 +86,6 @@ function Playlist() {
             );
           })}
         </div>
-        {/* <table className="playlist--table">
-          <thead className='playlist--table-head'>
-            <tr>
-              <th className='playlist--table-header'>#</th>
-              <th className='playlist--table-header'>Title</th>
-              <th className='playlist--table-header'>Album</th>
-              <th className='playlist--table-header'>Date Added</th>
-              <th><AccessTime sx={{ fontSize: '20px', color: '#A4A4A4', opacity: '0.6' }} className="playlist--clock"/></th>
-            </tr>
-          </thead>
-          <tbody>
-            {data.map((d, index) => {
-              return (
-                <tr key={index} className="playlist--table-row">
-                    <MusicRow
-                      id={index + 1}
-                      img={d.img}
-                      title={d.title}
-                      artist={d.artist}
-                      album={d.album}
-                      date={d.date}
-                      duration={d.duration}
-                    />
-                </tr>
-              );
-            })}
-          </tbody>
-        </table> */}
       </div>
     </div>
   );

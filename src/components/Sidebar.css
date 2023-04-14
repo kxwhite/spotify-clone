@@ -157,3 +157,9 @@
   scale: 1.05;
   border: 1.5px solid whitesmoke;
 }
+
+@media only screen and (max-height: 768px) {
+  .sidebar--cookies-country {
+    display: none;
+  }
+}

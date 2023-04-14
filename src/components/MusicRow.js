@@ -5,74 +5,18 @@ import { DownloadForOffline, FavoriteBorderOutlined, MoreHoriz, PlayArrow } from
 
 
 const MusicRow = ({i, id, title, artist, album, date, duration}) => {
-  // const [rowIndex, setRowIndex] = useState(null);
-
-  // const [hoveredRow, setHoveredRow] = useState(-1);
-
-  // const showRowHandler = (i)=>{
-  //     setHoveredRow(i);
-  // }
-
-  // const hideRowHandler=()=>{
-  //       setHoveredRow(-1)
-  // }
-
-  // const [view, setView] = useState('');
-  // const handleMouseEnter = () => setView('view');
-  // const handleMouseLeave = () => setView('');
-
-  // const [hover, setHover] = useState(false);
-
-  // const handleMouseEnter = () => {
-    //   setHover(true);
-    // };
-
-    // const handleMouseLeave = () => {
-      //   setHover(false);
-      // };
-
-  // const [hover, setHover] = useState(-1);
-  // const showHandler = (i) => {
-  //   setHover(i);
-  // };
-
-  // const hideHandler = () => {
-  //   setHover(-1);
-  // };
-
-  // const inboxItemStyle = ({ hover }) => ({
-  //   backgroundColor: hover ? "#292A2D" : null,
-  //   borderRadius: hover ? '4px' : null,
-  //   padding: hover ? '10px' : null
-  // });
 
   const [isHovering, setIsHovering] = useState(-1);
+  const [hovering, setHovering] = useState(true);
 
   return (
     <div
-      // className={`musicrow--container`}
-      // className={`musicrow--container ${inboxItemStyle({hover})}`}
-    // onMouseOver={() => setRowIndex(rowIndex => rowIndex === id ? null : id)}
-    // onMouseLeave={hideRowHandler}
-    // onMouseEnter={()=>showRowHandler(i)}
-    // className={hoveredRow === id ? `musicrow--container  musicrow--container-hover` : `musicrow--container`}
-      // onMouseEnter={handleMouseEnter}
-      // onMouseLeave={handleMouseLeave}
-      // style={{
-      //   backgroundColor: hover ? '#292A2D' : null,
-      //   borderRadius: hover ? '4px' : null,
-      //   padding: hover ? '10px' : null
-      //   }}
-      //   onMouseEnter={handleMouseEnter}
-      //   onMouseLeave={handleMouseLeave}
-        // onMouseLeave={hideHandler}
-        // onMouseEnter={()=>showHandler(i)}
         className={`musicrow--container ${isHovering === i ? "musicrow--container-hover" : ""}`}
         onMouseEnter={() => setIsHovering(i)} onMouseLeave={() => setIsHovering(-1)}
     >
       <div className="musicrow--first">
-        <PlayArrow sx={{ color: '#A4A4A4', fontSize: 18}} className='musicrow--play-icon'/>
-        <p className="musicrow--id">{id}</p>
+        {hovering ? <p className="musicrow--id">{id}</p>
+        : <PlayArrow sx={{ color: '#A4A4A4', fontSize: 18}} className='musicrow--play-icon'/>}
         <div className="musicrow--title-container">
           <img src={img} alt="Album Cover" className="musicrow--img" />
           <div className="musicrow--info">
