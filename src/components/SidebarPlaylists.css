@@ -1,0 +1,52 @@
+/* .sidebar--personal-playlist {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  height: 40px;
+  color: grey;
+  transition: 200ms color ease-in;
+}
+
+.sidebar--personal-playlist:hover {
+  color: white;
+}
+
+.sidebar>hr {
+  border: 1px solid #282828;
+  width: 90%;
+  margin: 10px auto;
+}
+
+.sidebar--icon {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.sidebar--personal-playlist>p {
+  margin-top: 10px;
+  margin-left: 20px;
+  font-size: 14px;
+} */
+
+/* Personal Playlist CSS */
+.sidebar--personal-playlist {
+  color: #A4A4A4;
+  font-size: 14px;
+  margin: 20px 26px;
+}
+
+.sidebar--personal-playlist>p {
+  margin: 30px 0;
+}
+
+.sidebar--icon {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.sidebar--personal-playlist>p:hover {
+  transition: all 0.2s ease;
+  font-weight: 600;
+  color: whitesmoke;
+  cursor: pointer;
+}

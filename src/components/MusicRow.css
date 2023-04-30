@@ -1,14 +1,16 @@
 .musicrow--container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 10px;
+  justify-items: start;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
 }
 
 .musicrow--first {
   display: flex;
   align-items: center;
-  width: 30%;
 }
 
 .musicrow--title-container {
@@ -59,6 +61,7 @@
 
 .musicrow--duration-container {
   display: flex;
+  justify-self: end;
 }
 
 .musicrow--duration {

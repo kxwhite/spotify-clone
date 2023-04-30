@@ -1,0 +1,35 @@
+.search-card--body {
+  color: whitesmoke;
+  margin-top: 20px;
+  width: 200px;
+  height: 200px;
+  border-radius: 12px;
+  position: relative;
+  padding: 20px;
+}
+
+.search-card--img-container {
+  width: 200px;
+  height: 200px;
+  -webkit-mask-image: url("../assets/searchcards_assets/Mask.png");
+  mask-image: url("../assets/searchcards_assets/Mask.png");
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border-radius: 0 0 12px 0;
+}
+
+.search-card--img {
+  width: 100px;
+  height: 100px;
+  rotate: 30deg;
+  position: absolute;
+  right: -10px;
+  bottom: -10px;
+}
+
+.search-card--body:hover {
+  cursor: pointer;
+}

@@ -12,8 +12,29 @@
   /* z-index: -1; */
 }
 
+.navbar--container-loggedin {
+  background-color: transparent;
+  height: 60px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  flex: 0.8;
+  /* z-index: -1; */
+}
+
+.navbar--container-loggedin.active {
+  background-color: #101010;
+}
+
+.nav--bg {
+  background-color: #101010;
+}
+
 .nav--arrow-container {
-  margin-left: 21%;
+  margin-left: 22%;
 }
 
 .nav--back-arrow, .nav--next-arrow {
@@ -38,7 +59,7 @@
    color: whitesmoke;
    padding: 4px;
    margin: 10px;
-   margin-right: 30px;
+   /* margin-right: 30px; */
    min-width: 150px;
    border-radius: 34px;
    cursor: default;
@@ -46,12 +67,13 @@
 
 .nav--avatar {
   position: absolute;
-  margin-right: 5px;
+  margin-right: 10px;
 }
 
 .nav--username {
-  margin-right: 30px;
+  margin-right: 10px;
   font-size: 14px;
+  text-transform: lowercase;
 }
 
 .nav--menu {
@@ -92,4 +114,23 @@
   transition: all 0.2 ease-in-out;
   scale: 1.05;
   opacity: 95%;
+}
+
+.nav--btn-upgrade {
+  background-color: transparent;
+  border: 1px solid #A7A7A7;
+  padding: 8px 20px;
+  color: #A7A7A7;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 500px;
+}
+
+.nav--btn-upgrade:hover {
+  transition: all 0.2 ease-in-out;
+  scale: 1.05;
+  opacity: 95%;
+  border: 1px solid whitesmoke;
+  color: whitesmoke;
+  cursor: pointer;
 }

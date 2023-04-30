@@ -1,32 +1,32 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import spotify from "../assets/login_assets/spotify.png";
 import fbimg from "../assets/login_assets/fbimg.png";
 import appleimg from "../assets/login_assets/appleimg.png";
 import googleimg from "../assets/login_assets/googleimg.png";
 import "../styles/login.css";
-import axios from 'axios'
+import { accessUrl } from "../spotify";
 
-function Login({CLIENT_ID, REDIRECT_URI, AUTH_ENDPOINT, RESPONSE_TYPE}) {
+function Login() {
 
-  const [token, setToken] = useState("");
+  // const [token, setToken] = useState("");
 
-  useEffect(() => {
-    const hash = window.location.hash
-    let token = window.localStorage.getItem("token")
+  // useEffect(() => {
+  //   const hash = window.location.hash
+  //   let token = window.localStorage.getItem("token")
 
-    if(!token && hash) {
-      token = hash.substring(1).split("&").find(e => e.startsWith("access_token")).split("=")[1]
+  //   if(!token && hash) {
+  //     token = hash.substring(1).split("&").find(e => e.startsWith("access_token")).split("=")[1]
 
-      window.hash = ""
-      window.localStorage.setItem("token", token)
-      setToken(token)
-    }
-  }, [])
+  //     window.hash = ""
+  //     window.localStorage.setItem("token", token)
+  //   }
+  //   setToken(token)
+  // }, [])
 
-  const handleLogout = () => {
-    setToken("")
-    window.localStorage.removeItem("token")
-  }
+  // const handleLogout = () => {
+  //   setToken("")
+  //   window.localStorage.removeItem("token")
+  // }
 
 
   return (
@@ -68,17 +68,11 @@ function Login({CLIENT_ID, REDIRECT_URI, AUTH_ENDPOINT, RESPONSE_TYPE}) {
           <div>
             <label className="remember">Remember Me</label>
             <input className="check" type="checkbox" />
-            {!token ?
-            <button className="btnLogin">
-              <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>
+             <button className="btnLogin">
+              <a href={accessUrl}>
                 LOG IN
               </a>
             </button>
-            :
-            <button onClick={handleLogout}>
-                LOG OUT
-            </button>
-            }
             <div id="span3"></div>
           </div>
           <h3 className="account">Don't have an account?</h3>

@@ -4,8 +4,14 @@ import './Sidebar.css'
 import { Home, Search, LibraryMusic, AddBox, Favorite } from '@mui/icons-material'
 import { Link } from "react-router-dom";
 import CustomizedDialogs from './common/DialogModal'
+import SidebarPlaylists from './SidebarPlaylists';
+import { useStateProviderValue } from '../StateProvider';
 
 function Sidebar() {
+
+  const [{ playlists }, dispatch] = useStateProviderValue();
+  console.log("playlists =>", playlists);
+
   return (
     <div className='sidebar--container'>
       <Link to='/'>
@@ -13,7 +19,7 @@ function Sidebar() {
       </Link>
       <div className="sidebar--links">
         <div className='sidebar--link-cont'><Home className='sidebar--icons' sx={{ fontSize: 30 }}/><Link className='sidebar--link'>Home</Link></div>
-        <div className='sidebar--link-cont'><Search className='sidebar--icons' sx={{ fontSize: 30 }}/><Link className='sidebar--link'>Search</Link></div>
+        <div className='sidebar--link-cont'><Search className='sidebar--icons' sx={{ fontSize: 30 }}/><Link className='sidebar--link' to="/search">Search</Link></div>
         <div className='sidebar--link-cont'><LibraryMusic className='sidebar--icons' sx={{ fontSize: 30 }}/><Link className='sidebar--link'>Your Library</Link></div>
       </div>
 
@@ -36,10 +42,10 @@ function Sidebar() {
         <hr className='sidebar--hr'/>
       </div>
 
-      <div className='sidebar--personal-playlist'>
-        <p>RapCaviar</p>
-        <p>Music mix #1</p>
-        <p>Music mix #2</p>
+      <div>
+        {playlists?.items?.map(playlist => (
+          <SidebarPlaylists title={playlist.name} key={ playlist.name }/>
+        ))}
       </div>
 
       <div className="sidebar--cookies-country">
