@@ -1,203 +1,179 @@
-.imgNav {
-  border: 1px solid lightgray;
-  border-left: none;
-  border-right: none;
-  position: relative;
-  width: 100vw;
+body {
+  overflow-x: hidden;
+}
+.img--container {
+  text-align: center;
+  justify-content: center;
+  border-bottom: 1px solid lightgrey;
 }
 .logoImg {
-  position: relative;
-  left: -20px;
   width: 200px;
-  height: 80px;
-}
-.fmessage {
-  position: relative;
-  top: 30px;
+  margin: 0.5% 0% 0% 0%;
 }
 .message {
   text-align: center;
+  padding: 25px;
 }
-.formContainer {
-  position: relative;
-  top: 50px;
-  width: 50vw;
-  height: 120px;
-  left: 250px;
+.group--container {
+  min-height: 115vh;
 }
-
-.spanImgfb {
-  position: absolute;
-  width: 35px;
-  height: 30px;
-  border-radius: 50%;
-  left: 580px;
-  top: 150px;
+.btns--container {
+  width: 100%;
+  height: 50px;
+  border-radius: 500px;
+  display: grid;
+  align-items: center;
+  justify-content: center;
 }
-.spanImgapple {
-  position: absolute;
-  width: 35px;
-  height: 30px;
-  border-radius: 50%;
-  left: 600px;
-  top: 223px;
-}
-.spanImggoogle {
-  position: absolute;
-  width: 35px;
-  height: 30px;
-  border-radius: 50%;
-  left: 600px;
-  top: 290px;
+.login--btn {
+  border-radius: 25px;
+  width: 390px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .fbbtn {
-  position: absolute;
-  left: 500px;
-  top: 140px;
-  width: 450px;
-  height: 55px;
-  border-radius: 25px;
-  background-color: rgba(31, 110, 229, 0.996);
+  background-color: rgb(52, 120, 246);
   color: white;
   font-weight: bold;
 }
 .applebtn {
-  position: absolute;
-  left: 500px;
-  top: 210px;
-  width: 450px;
-  height: 55px;
-  border-radius: 25px;
-  background-color: rgb(16, 15, 15);
+  margin-top: 15px;
+  background-color: black;
   color: white;
   font-weight: bold;
 }
 .googlebtn {
-  position: absolute;
-  left: 500px;
-  top: 280px;
-  width: 450px;
-  height: 55px;
-  border-radius: 25px;
+  margin-top: 15px;
   background-color: white;
-  color: rgba(54, 52, 52, 0.252);
+  color: rgb(168, 158, 158);
   font-weight: bold;
+}
+.spanImgfb {
+  width: 30px;
+  border-radius: 50%;
+  margin-top: -40px;
+  margin-left: 60px;
+}
+.spanImgapple,
+.spanImggoogle {
+  width: 30px;
+  border-radius: 50%;
+  margin-top: -40px;
+  margin-left: 75px;
+}
+.divider {
+  display: flex;
+  align-items: center;
+  margin-top: 130px;
+  justify-content: center;
 }
 
-.remainingForm {
-  position: relative;
-  height: 115vh;
+.hr {
+  width: 150px;
 }
-body {
-  overflow-x: hidden;
-}
-#span1 {
-  width: 200px;
-  border: 1px solid rgb(176, 173, 173);
-  position: relative;
-  top: 270px;
-  left: 480px;
-}
-#span2 {
-  width: 200px;
-  border: 1px solid rgb(176, 173, 173);
-  position: relative;
-  left: 750px;
-  top: 270px;
-}
+
 .or {
-  position: absolute;
-  top: 276px;
-  left: 705px; /* */
+  margin: 0 2%;
+  color: #6d6d6d;
+}
+.form {
+  margin: -20px 0;
+  width: auto;
+  height: auto;
+}
+.wrapper {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  margin-left: 5%;
 }
 .emailLabel {
-  position: relative;
   font-weight: bold;
-  top: 300px;
-  left: 480px;
+  padding-top: 60px;
+}
+
+.emailInput {
+  font-weight: bold;
+  width: 460px;
+  height: 45px;
+  margin-top: 10px;
 }
 .passwordLabel {
-  position: relative;
-  top: 400px;
   font-weight: bold;
-  left: -196px;
-}
-.emailInput {
-  position: relative;
-  font-weight: bold;
-  top: 340px;
-  left: 273px;
-  width: 470px;
-  height: 45px;
-  text-align: left;
+  margin-top: 10px;
 }
 .passwordInput {
-  position: relative;
-  top: 440px;
-  left: -270px;
-  width: 470px;
+  width: 460px;
+  font-weight: bold;
+  display: flex;
   height: 45px;
+  margin-top: 10px;
 }
 input::placeholder {
-  position: relative;
-  left: 15px;
+  padding-left: 15px;
 }
 .forgotLink {
-  position: relative;
-  top: 500px;
-  left: -740px;
+  padding: 10px 0 0;
   text-decoration: underline;
   cursor: pointer;
 }
 .forgotLink:hover {
   color: green;
 }
+#span3 {
+  margin-top: 30px;
+}
 .remember {
-  position: relative;
-  top: 498px;
-  left: -70px;
+  padding-top: 10px;
+  padding-left: 20px;
 }
 .check {
-  position: relative;
-  top: 500px;
-  left: -200px;
-  transform: scale(1.4);
-}
-.check:hover {
-  color: rgb(67, 231, 45);
+  margin-top: -18px;
 }
 .btnLogin {
-  position: relative;
-  top: 495px;
-  left: 145px;
-  background-color: rgb(67, 231, 45);
-  border-radius: 25px;
-  width: 100px;
+  width: 140px;
+  border-radius: 35px;
   height: 50px;
+  font-size: medium;
+  background-color: rgb(50, 214, 50);
   font-weight: bold;
+  margin-left: 320px;
+  margin-top: -15px;
 }
-#span3 {
-  width: 480px;
-  border: 1px solid rgb(176, 173, 173);
-  position: relative;
-  top: 515px;
-  left: 470px;
+.wrap {
+  text-align: center;
+  padding-top: 40px;
 }
-.account {
-  position: relative;
-  top: 550px;
-  left: 10px;
+.signup {
+  border-radius: 25px;
+  width: 390px;
+  height: 50px;
+  display: flexbox;
+  align-items: center;
+  background-color: white;
+  margin-top: 15px;
+  color: rgb(137, 137, 137);
+  font-weight: medium;
+  font-size: medium;
+  justify-content: center;
 }
 
-.signup {
-  position: absolute;
-  left: 470px;
-  font-size: 18px;
-  top: 700px;
-  width: 480px;
-  height: 55px;
-  border-radius: 25px;
-  background-color: white;
-  color: rgba(6, 6, 6, 0.572);
-  font-weight: bold;
+@media only screen and (max-width: 768px) {
+  .spanImgfb,
+  .spanImgapple,
+  .spanImggoogle {
+    display: none;
+  }
+  .btnLogin {
+    width: 450px;
+    border-radius: 35px;
+    height: 50px;
+    font-size: medium;
+    background-color: rgb(50, 214, 50);
+    font-weight: bold;
+    margin-left: 0px;
+    margin-top: 15px;
+  }
 }
