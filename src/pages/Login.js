@@ -4,6 +4,8 @@ import fbimg from "../assets/login_assets/fbimg.png";
 import appleimg from "../assets/login_assets/appleimg.png";
 import googleimg from "../assets/login_assets/googleimg.png";
 import "../styles/login.css";
+import { accessUrl } from "../spotify";
+
 function Login() {
   return (
     <div>
@@ -47,7 +49,7 @@ function Login() {
               </a>
               <label className="remember">Remember Me</label>
               <input className="check" type="checkbox" />
-              <button className="btnLogin">LOG IN</button>
+              <button className="btnLogin"><a href={accessUrl}>LOG IN</a></button>
               <hr id="span3" />
             </div>
             <div className="wrap">

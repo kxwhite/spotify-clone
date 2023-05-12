@@ -5,17 +5,19 @@ import Navbar from "../components/Navbar";
 import React from "react";
 // import BodySkeleton from "../components/common/BodySkeleton";
 import Playlist from "./Playlist";
+import Search from "./Search";
 
-function Main() {
+function Main({spotify, token, setToken}) {
   return (
     <div className="main--container">
       <div className="main--body">
         <Sidebar />
-        <Navbar />
+        <Navbar spotify={spotify} token={token} setToken={setToken}/>
         {/* <BodySkeleton /> */}
-        <Playlist />
+        {/* <Search spotify={spotify}/> */}
+        <Playlist spotify={spotify} />
       </div>
-      <Footer />
+      <Footer spotify={spotify}/>
     </div>
   );
 }
