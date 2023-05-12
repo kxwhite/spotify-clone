@@ -18,8 +18,8 @@ function Sidebar() {
         <img src={logo} alt="Spotify Logo" className='sidebar--logo'/>
       </Link>
       <div className="sidebar--links">
-        <div className='sidebar--link-cont'><Home className='sidebar--icons' sx={{ fontSize: 30 }}/><Link className='sidebar--link'>Home</Link></div>
-        <div className='sidebar--link-cont'><Search className='sidebar--icons' sx={{ fontSize: 30 }}/><Link className='sidebar--link' to="/search">Search</Link></div>
+        <div className='sidebar--link-cont'><Home className='sidebar--icons' sx={{ fontSize: 30 }}/><Link to="/" className='sidebar--link'>Home</Link></div>
+        <div className='sidebar--link-cont'><Search className='sidebar--icons' sx={{ fontSize: 30 }}/><Link to="/search" className='sidebar--link'>Search</Link></div>
         <div className='sidebar--link-cont'><LibraryMusic className='sidebar--icons' sx={{ fontSize: 30 }}/><Link className='sidebar--link'>Your Library</Link></div>
       </div>
 

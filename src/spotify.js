@@ -12,6 +12,9 @@ const scopes = [
   "user-read-playback-state",
   "user-top-read",
   "user-modify-playback-state",
+  "user-read-email",
+  "user-read-private",
+  "user-read-playback-position",
   "playlist-read-private",
   "playlist-read-collaborative",
 ];

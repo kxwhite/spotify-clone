@@ -16,28 +16,10 @@ function Playlist({spotify}) {
     setShow(!show)
   }
 
-  // const data = [
-  //   {img: {img}, title: 'What\'s the Use?', artist: 'Mac Miller', album: 'Swimming', date: 'Mar 28, 2023', duration: '3:03'},
-  //   {img: {img}, title: 'What\'s the Use?', artist: 'Mac Miller', album: 'Swimming', date: 'Mar 28, 2023', duration: '3:03'},
-  //   {img: {img}, title: 'What\'s the Use?', artist: 'Mac Miller', album: 'Swimming', date: 'Mar 28, 2023', duration: '3:03'},
-  //   {img: {img}, title: 'What\'s the Use?', artist: 'Mac Miller', album: 'Swimming', date: 'Mar 28, 2023', duration: '3:03'},
-  //   {img: {img}, title: 'What\'s the Use?', artist: 'Mac Miller', album: 'Swimming', date: 'Mar 28, 2023', duration: '3:03'},
-  //   {img: {img}, title: 'What\'s the Use?', artist: 'Mac Miller', album: 'Swimming', date: 'Mar 28, 2023', duration: '3:03'},
-  //   {img: {img}, title: 'What\'s the Use?', artist: 'Mac Miller', album: 'Swimming', date: 'Mar 28, 2023', duration: '3:03'},
-  //   {img: {img}, title: 'What\'s the Use?', artist: 'Mac Miller', album: 'Swimming', date: 'Mar 28, 2023', duration: '3:03'},
-  //   {img: {img}, title: 'What\'s the Use?', artist: 'Mac Miller', album: 'Swimming', date: 'Mar 28, 2023', duration: '3:03'},
-  //   {img: {img}, title: 'What\'s the Use?', artist: 'Mac Miller', album: 'Swimming', date: 'Mar 28, 2023', duration: '3:03'},
-  //   {img: {img}, title: 'What\'s the Use?', artist: 'Mac Miller', album: 'Swimming', date: 'Mar 28, 2023', duration: '3:03'},
-  //   {img: {img}, title: 'What\'s the Use?', artist: 'Mac Miller', album: 'Swimming', date: 'Mar 28, 2023', duration: '3:03'},
-  //   {img: {img}, title: 'What\'s the Use?', artist: 'Mac Miller', album: 'Swimming', date: 'Mar 28, 2023', duration: '3:03'},
-  //   {img: {img}, title: 'What\'s the Use?', artist: 'Mac Miller', album: 'Swimming', date: 'Mar 28, 2023', duration: '3:03'},
-  //   {img: {img}, title: 'What\'s the Use?', artist: 'Mac Miller', album: 'Swimming', date: 'Mar 28, 2023', duration: '3:03'},
-  // ]
-
   const playPlaylist = (id) => {
     spotify
       .play({
-        context_uri: `spotify:playlist:37i9dQZEVXcJZyENOWUFo7`,
+        context_uri: `spotify:playlist:37i9dQZEVXcQ9COmYvdajy`,
       })
       .then((res) => {
         spotify.getMyCurrentPlayingTrack().then((r) => {

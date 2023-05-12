@@ -156,8 +156,8 @@ function Search() {
       </div>
       <h2 className='search--page-title'>Browse all</h2>
       <div className='search--grid'>
-        {data.map((d) => {
-          return <SearchCard img={d.img} title={d.title} bgColour={d.bgColour}/>
+        {data.map((d, index) => {
+          return <SearchCard key={index} img={d.img} title={d.title} bgColour={d.bgColour}/>
         })}
       </div>
     </div>

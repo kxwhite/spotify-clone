@@ -7,28 +7,6 @@ import "../styles/login.css";
 import { accessUrl } from "../spotify";
 
 function Login() {
-
-  // const [token, setToken] = useState("");
-
-  // useEffect(() => {
-  //   const hash = window.location.hash
-  //   let token = window.localStorage.getItem("token")
-
-  //   if(!token && hash) {
-  //     token = hash.substring(1).split("&").find(e => e.startsWith("access_token")).split("=")[1]
-
-  //     window.hash = ""
-  //     window.localStorage.setItem("token", token)
-  //   }
-  //   setToken(token)
-  // }, [])
-
-  // const handleLogout = () => {
-  //   setToken("")
-  //   window.localStorage.removeItem("token")
-  // }
-
-
   return (
     <div>
       <div className="img--container">
@@ -71,7 +49,7 @@ function Login() {
               </a>
               <label className="remember">Remember Me</label>
               <input className="check" type="checkbox" />
-              <button className="btnLogin">LOG IN</button>
+              <button className="btnLogin"><a href={accessUrl}>LOG IN</a></button>
               <hr id="span3" />
             </div>
             <div className="wrap">

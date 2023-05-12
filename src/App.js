@@ -1,6 +1,6 @@
 import "./App.css";
 // import { Routes, Route } from "react-router-dom";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import Main from "./pages/Main";
@@ -30,7 +30,6 @@ function App() {
       })
 
       spotify.getMe().then(user => {
-        // console.log("User =>", user);
         dispatch({
           type: "SET_USER",
           user: user
@@ -38,18 +37,23 @@ function App() {
       })
 
       spotify.getUserPlaylists().then((playlists) => {
-        console.log("App Playlists => ", playlists);
         dispatch({
           type: "SET_PLAYLISTS",
           playlists: playlists
         })
-      })
-      .catch((err) => console.log("Playlist Error => ", err));
+      });
 
       spotify.getPlaylist("37i9dQZEVXcQ9COmYvdajy").then((response) => {
         dispatch({
           type: "SET_DISCOVER_WEEKLY",
           discover_weekly: response,
+        });
+      });
+
+      spotify.getPlaylist().then((response) => {
+        dispatch({
+          type: "SET_PLAYLIST",
+          playlist: response,
         });
       });
 
@@ -71,53 +75,26 @@ function App() {
 
   return (
     <div className="App">
-      { token ? <Main spotify={spotify} /> : <Login />}
+      {/* { token ? <Main spotify={spotify} /> : <Login />} */}
 
-      {/* <div>
-        <Routes>
-          <Route path="/" element={<Main />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="*" element={<NoMatch />} />
-        </Routes>
-      </div> */}
-
-      {/* {!token ? (
+      {!token ? (
         <Login />
       ) : (
-        <Router>
-          <Switch>
-            <Route path="/signup">
-              <SignUp />
-            </Route>
-            <Route path="/search">
-              <Search />
-            </Route>
-            <Route path="/top-artists">
-              <h1>Top Artists</h1>
-            </Route>
-            <Route path="/top-tracks">
-              <h1>Top Tracks</h1>
-            </Route>
-            <Route path="/playlists/:id"> */}
-              {/* Looks same as discovery page */}
-              {/* <h1>Playlist</h1>
-            </Route>
-            <Route path="/playlists"> */}
-              {/* This will be 'Your Library' tab */}
-              {/* shows playlists as cards */}
-              {/* <h1>Playlists</h1>
-            </Route>
-            <Route path="/"> */}
-                {/* Main will be the home page */}
-                {/* <Main />
-            </Route>
-            <Route path="*">
-                <NoMatch />
-            </Route>
-          </Switch>
-        </Router>
-      )} */}
+        <Routes>
+            {/* Main will be the home page */}
+            <Route path="/" element={<Main spotify={spotify}/>}/>
+            <Route path="/signup" element={<SignUp spotify={spotify}/>}/>
+            <Route path="/search" element={<Search spotify={spotify}/>}/>
+            <Route path="/top-artists" element={<h1>Top Artists</h1>}/>
+            <Route path="/top-tracks" element={<h1>Top Tracks</h1>}/>
+            {/* Looks same as discovery page */}
+            <Route path="/playlists/:id" element={<h1>Playlist</h1>}/>
+            {/* This will be 'Your Library' tab */}
+            {/* shows playlists as cards */}
+            <Route path="/playlists" element={<h1>Playlists</h1>}/>
+            <Route path="*" element={<NoMatch spotify={spotify}/>}/>
+        </Routes>
+      )}
     </div>
   );
 }
