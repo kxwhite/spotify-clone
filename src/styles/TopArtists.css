@@ -1,0 +1,31 @@
+/* Main CSS */
+.top-artists--body {
+  height: 100vh;
+  overflow-y: overlay;
+  flex: 0.8;
+  background-color: #121212;
+  padding: 10px 36px 36px 36px;
+  color: whitesmoke;
+}
+
+.top-artists--grid {
+  display: grid;
+  margin: 0 auto;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.top-artists--body::-webkit-scrollbar {
+  display: none;
+}
+
+.top-artists--page-title {
+  padding-top: 90px;
+}
+
+.top-artists--hr {
+  margin-top: 100px;
+  opacity: 10%;
+  margin-left: auto;
+  margin-right: auto;
+}

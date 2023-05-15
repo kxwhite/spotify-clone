@@ -1,5 +1,4 @@
 import "./App.css";
-// import { Routes, Route } from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
@@ -10,11 +9,32 @@ import { getTokenFromResponse } from "./spotify";
 import SpotifyWebApi from "spotify-web-api-js";
 import { useStateProviderValue } from "./StateProvider";
 import Search from "./pages/Search";
+import TopArtists from "./pages/TopArtists";
 
 const spotify = new SpotifyWebApi();
 
 function App() {
-  const [{ user, token }, dispatch] = useStateProviderValue();
+  const [{ token }, dispatch] = useStateProviderValue();
+
+  // const popularArtists = [
+  //   "06HL4z0CvFAxyc27GXpf02",
+  //   "3TVXtAsR1Inumwj472S9r4",
+  //   "6eUKZXaKkcviH0Ku9w2n3V",
+  //   "1Xyo4u8uXC1ZmMpatF05PJ",
+  //   "5K4W6rqBFWDnAN6FQUkS6x",
+  //   "7dGJo4pcD2V6oG8kP0tJRR",
+  //   "5pKCCKE2ajJHZ9KAiaK11H",
+  //   "7Ln80lUS6He07XvHI8qqHH",
+  //   "7tYKF4w9nC0nq9CsPZTHyP",
+  //   "00FQb4jTyendYWaN8pK0wa",
+  // ];
+
+  // const popularArtists = [
+  //   "06HL4z0CvFAxyc27GXpf02,3TVXtAsR1Inumwj472S9r4,6eUKZXaKkcviH0Ku9w2n3V,1Xyo4u8uXC1ZmMpatF05PJ,5K4W6rqBFWDnAN6FQUkS6x,7dGJo4pcD2V6oG8kP0tJRR,5pKCCKE2ajJHZ9KAiaK11H,7Ln80lUS6He07XvHI8qqHH,7tYKF4w9nC0nq9CsPZTHyP,00FQb4jTyendYWaN8pK0wa"
+  // ];
+
+  const popularArtists = "06HL4z0CvFAxyc27GXpf02,3TVXtAsR1Inumwj472S9r4,6eUKZXaKkcviH0Ku9w2n3V,1Xyo4u8uXC1ZmMpatF05PJ,5K4W6rqBFWDnAN6FQUkS6x,7dGJo4pcD2V6oG8kP0tJRR,5pKCCKE2ajJHZ9KAiaK11H,7Ln80lUS6He07XvHI8qqHH,7tYKF4w9nC0nq9CsPZTHyP,00FQb4jTyendYWaN8pK0wa"
+;
 
   useEffect(() => {
     const hash = getTokenFromResponse();
@@ -57,25 +77,34 @@ function App() {
         });
       });
 
-      spotify.getMyTopArtists().then((response) =>
-        dispatch({
-          type: "SET_TOP_ARTISTS",
-          top_artists: response,
-        })
-      );
+      spotify.getArtists(
+        ["06HL4z0CvFAxyc27GXpf02",
+        "3TVXtAsR1Inumwj472S9r4",
+        "6eUKZXaKkcviH0Ku9w2n3V",
+        "1Xyo4u8uXC1ZmMpatF05PJ",
+        "5K4W6rqBFWDnAN6FQUkS6x",
+        "7dGJo4pcD2V6oG8kP0tJRR",
+        "5pKCCKE2ajJHZ9KAiaK11H",
+        "7Ln80lUS6He07XvHI8qqHH",
+        "7tYKF4w9nC0nq9CsPZTHyP",
+        "00FQb4jTyendYWaN8pK0wa"]
+        ).then((response) =>
+          dispatch({
+            type: "SET_TOP_ARTISTS",
+            top_artists: response,
+          })
+        );
 
       dispatch({
         type: "SET_SPOTIFY",
         spotify: spotify,
       });
     }
-    // console.log('Token Test => ', token);
-  }, [token, dispatch])
+  }, [])
 
 
   return (
     <div className="App">
-      {/* { token ? <Main spotify={spotify} /> : <Login />} */}
 
       {!token ? (
         <Login />
@@ -85,7 +114,7 @@ function App() {
             <Route path="/" element={<Main spotify={spotify}/>}/>
             <Route path="/signup" element={<SignUp spotify={spotify}/>}/>
             <Route path="/search" element={<Search spotify={spotify}/>}/>
-            <Route path="/top-artists" element={<h1>Top Artists</h1>}/>
+            <Route path="/top-artists" element={<TopArtists spotify={spotify}/>}/>
             <Route path="/top-tracks" element={<h1>Top Tracks</h1>}/>
             {/* Looks same as discovery page */}
             <Route path="/playlists/:id" element={<h1>Playlist</h1>}/>
