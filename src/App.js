@@ -10,6 +10,7 @@ import SpotifyWebApi from "spotify-web-api-js";
 import { useStateProviderValue } from "./StateProvider";
 import Search from "./pages/Search";
 import TopArtists from "./pages/TopArtists";
+import TopTracks from "./pages/TopTracks";
 
 const spotify = new SpotifyWebApi();
 
@@ -70,6 +71,13 @@ function App() {
         });
       });
 
+      spotify.getPlaylist("37i9dQZF1DX18jTM2l2fJY").then((response) => {
+        dispatch({
+          type: "SET_TOP_TRACKS",
+          top_tracks: response,
+        });
+      });
+
       spotify.getPlaylist().then((response) => {
         dispatch({
           type: "SET_PLAYLIST",
@@ -115,7 +123,7 @@ function App() {
             <Route path="/signup" element={<SignUp spotify={spotify}/>}/>
             <Route path="/search" element={<Search spotify={spotify}/>}/>
             <Route path="/top-artists" element={<TopArtists spotify={spotify}/>}/>
-            <Route path="/top-tracks" element={<h1>Top Tracks</h1>}/>
+            <Route path="/top-tracks" element={<TopTracks spotify={spotify}/>}/>
             {/* Looks same as discovery page */}
             <Route path="/playlists/:id" element={<h1>Playlist</h1>}/>
             {/* This will be 'Your Library' tab */}

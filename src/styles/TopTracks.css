@@ -1,0 +1,161 @@
+/* Main CSS */
+.top-tracks--body {
+  height: 100vh;
+  overflow-y: overlay;
+  flex: 0.8;
+  background-color: #121212;
+}
+
+.top-tracks--body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Top Section CSS*/
+.top-tracks--top-section {
+  padding: 36px;
+  padding-top: 90px;
+  display: flex;
+  align-items: flex-end;
+  background: rgb(245, 137, 32);
+  background: linear-gradient(180deg, rgba(245, 137, 32, 1) 0%, rgba(123, 69, 18, 1) 100%);
+}
+
+/* Bottom Section CSS */
+.top-tracks--bottom-section {
+  height: 100%;
+  padding: 30px 36px;
+  background: rgb(98, 55, 14);
+    background: linear-gradient(180deg, rgba(98, 55, 14, 1) 0%, rgba(18, 18, 18, 1) 20%);
+}
+
+/* Bottom Nav CSS */
+.top-tracks--play-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.top-tracks--play-nav-left {
+  width: 175px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.top-tracks--play-nav-right {
+  /* width: 175px; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+input[type=text].top-tracks--search-input {
+  padding: 4px;
+  border: 0;
+  margin: 0;
+  border-radius: 30px;
+  background: transparent;
+  caret-color: #767676;
+  color: #767676;
+  text-align: left;
+}
+
+.top-tracks--search-input::-webkit-input-placeholder {
+  text-align: left;
+}
+
+input[type="text"].top-tracks--search-input::placeholder {
+  text-align: left;
+}
+
+input.top-tracks--search-input:focus {
+  outline: none;
+}
+
+.top-tracks--search-cont {
+  display: flex;
+  align-items: center;
+  /* flex: 0.5; */
+  color: whitesmoke;
+  background-color: #1E1E1E;
+  border-radius: 30px;
+  padding: 10px;
+  margin-right: 30px;
+}
+
+.top-tracks--play-btn:hover,
+.top-tracks--downarrow-btn:hover,
+.top-tracks--more-btn:hover {
+  transition: scale 0.2s ease-in-out;
+  scale: 1.03;
+  cursor: pointer;
+}
+
+.top-tracks--recent-container {
+  display: flex;
+  align-items: center;
+  min-width: 150px;
+  color: #767676;
+  padding: 4px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.top-tracks--recent-txt {
+  text-transform: capitalize;
+  color: #767676;
+  font-size: 12px;
+  font-weight: 600;
+  margin-right: 4px;
+}
+
+/* bottom Table CSS */
+.top-tracks--table-header {
+  text-transform: uppercase;
+  color: #A4A4A4;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.top-tracks--table-head {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr 1fr;
+  margin-top: 18px;
+}
+
+.top-tracks--table-first {
+  display: flex;
+  align-items: center;
+}
+
+.top-tracks--table-header {
+  margin-right: 20px;
+}
+
+.top-tracks--table-row {
+  margin: 0 5px;
+  margin-top: 25px;
+}
+
+.top-tracks--hr {
+  border: 0;
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(164, 164, 164, 0.302);
+  margin-top: 4px;
+}
+
+.top-tracks--clock {
+  margin-right: 32px;
+  justify-self: end;
+}
+
+.top-tracks--table-row:hover {
+  transition: all 0.1s ease-in-out;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  padding: 10px;
+  margin: 0;
+  margin-top: 16px;
+}
