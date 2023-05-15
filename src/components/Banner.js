@@ -28,8 +28,8 @@ function Banner({ spotify }) {
             />
             <p className="banner--user-name">Made for <strong>{discover_weekly?.tracks.items[0].track.artists[0].name}</strong></p>
             <p className="banner--user-info">&nbsp;• 1209 Likes •</p>
-            <p className="banner--user-info">&nbsp;{discover_weekly?.tracks.total} songs&nbsp;</p>
-            <p className="banner--user-info">• 1 hr 45 min</p>
+            <p className="banner--user-info">&nbsp;{discover_weekly?.tracks.total} songs •&nbsp;</p>
+            <p className="banner--duration"> 1 hr 45 min</p>
           </div>
         </div>
       </div>

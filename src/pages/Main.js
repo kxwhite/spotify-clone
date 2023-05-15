@@ -7,6 +7,7 @@ import React from "react";
 import Playlist from "./Playlist";
 import Search from "./Search";
 import TopArtists from "./TopArtists";
+import TopTracks from "./TopTracks";
 
 function Main({spotify, token, setToken}) {
   return (
@@ -17,7 +18,8 @@ function Main({spotify, token, setToken}) {
         {/* <BodySkeleton /> */}
         {/* <Search spotify={spotify}/> */}
         {/* <Playlist spotify={spotify} /> */}
-        <TopArtists spotify={spotify}/>
+        {/* <TopArtists spotify={spotify}/> */}
+        <TopTracks spotify={spotify}/>
       </div>
       <Footer spotify={spotify}/>
     </div>
