@@ -6,6 +6,7 @@ import React from "react";
 // import BodySkeleton from "../components/common/BodySkeleton";
 import Playlist from "./Playlist";
 import Search from "./Search";
+import TopArtists from "./TopArtists";
 
 function Main({spotify, token, setToken}) {
   return (
@@ -15,7 +16,8 @@ function Main({spotify, token, setToken}) {
         <Navbar spotify={spotify} token={token} setToken={setToken}/>
         {/* <BodySkeleton /> */}
         {/* <Search spotify={spotify}/> */}
-        <Playlist spotify={spotify} />
+        {/* <Playlist spotify={spotify} /> */}
+        <TopArtists spotify={spotify}/>
       </div>
       <Footer spotify={spotify}/>
     </div>
