@@ -4,8 +4,8 @@
   padding-top: 90px;
   display: flex;
   align-items: flex-end;
-  background: rgb(75, 82, 121);
-  background: linear-gradient(180deg, rgba(75, 82, 121, 1) 0%, rgba(38, 42, 61, 1) 100%);
+  /* background: rgb(75, 82, 121);
+  background: linear-gradient(180deg, rgba(75, 82, 121, 1) 0%, rgba(38, 42, 61, 1) 100%); */
 }
 
 .banner--top-subsection {
@@ -30,6 +30,7 @@
   color: whitesmoke;
   font-size: 92px;
   letter-spacing: -2px;
+  text-transform: capitalize;
 }
 
 .banner--para {

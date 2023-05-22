@@ -8,6 +8,8 @@ export const initialState = {
   top_artists: null,
   playing: false,
   item: null,
+  search: null,
+  home: null,
   // REMOVE AFTER TESTING
   // token: "BQCVMfeBfdtU1FYpYaym4o1y6QPv4ibK6x1n6fvCsaJtZG7UIc…jNqlTMfZ9ywhA6yikvijidqPd2RqwisxnjAwWxb4i1-oSDE5M",
 };
@@ -19,6 +21,18 @@ const reducer = (state, action) => {
       return {
         ...state,
         user: action.user,
+      };
+
+    case "SET_SEARCH":
+      return {
+        ...state,
+        search: action.search,
+      };
+
+    case "SET_HOME":
+      return {
+        ...state,
+        home: action.home,
       };
 
     case "SET_PLAYING":

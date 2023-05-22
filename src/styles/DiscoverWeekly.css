@@ -1,19 +1,19 @@
 /* Main CSS */
-.playlist--body {
+.discover--body {
   height: 100vh;
   overflow-y: overlay;
-  flex: 1;
+  flex: 0.8;
   background-color: #121212;
   /* background-color: #1E1E1E; */
   /* z-index: -2; */
 }
 
-.playlist--body::-webkit-scrollbar {
+.discover--body::-webkit-scrollbar {
   display: none;
 }
 
 /* Bottom Section CSS */
-.playlist--bottom-section {
+.discover--bottom-section {
   height: 100%;
   padding: 30px 36px;
   /* background: rgb(31, 34, 49);
@@ -21,27 +21,27 @@
 }
 
 /* Bottom Nav CSS */
-.playlist--play-nav {
+.discover--play-nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.playlist--play-nav-left {
+.discover--play-nav-left {
   width: 175px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.playlist--play-nav-right {
+.discover--play-nav-right {
   /* width: 175px; */
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-input[type=text].playlist--search-input {
+input[type=text].discover--search-input {
   padding: 4px;
   border: 0;
   margin: 0;
@@ -52,19 +52,18 @@ input[type=text].playlist--search-input {
   text-align: left;
 }
 
-.playlist--search-input::-webkit-input-placeholder {
+.discover--search-input::-webkit-input-placeholder {
+  text-align: left;
+}
+input[type="text"].discover--search-input::placeholder {
   text-align: left;
 }
 
-input[type="text"].playlist--search-input::placeholder {
-  text-align: left;
-}
-
-input.playlist--search-input:focus {
+input.discover--search-input:focus {
   outline: none;
 }
 
-.playlist--search-cont {
+.discover--search-cont {
   display: flex;
   align-items: center;
   /* flex: 0.5; */
@@ -75,15 +74,13 @@ input.playlist--search-input:focus {
   margin-right: 30px;
 }
 
-.playlist--play-btn:hover,
-.playlist--downarrow-btn:hover,
-.playlist--more-btn:hover {
+.discover--play-btn:hover, .discover--downarrow-btn:hover, .discover--more-btn:hover {
   transition: scale 0.2s ease-in-out;
   scale: 1.03;
   cursor: pointer;
 }
 
-.playlist--recent-container {
+.discover--recent-container {
   display: flex;
   align-items: center;
   min-width: 150px;
@@ -93,7 +90,7 @@ input.playlist--search-input:focus {
   cursor: pointer;
 }
 
-.playlist--recent-txt {
+.discover--recent-txt {
   text-transform: capitalize;
   color: #767676;
   font-size: 12px;
@@ -102,7 +99,7 @@ input.playlist--search-input:focus {
 }
 
 /* bottom Table CSS */
-.playlist--table-header {
+.discover--table-header {
   text-transform: uppercase;
   color: #A4A4A4;
   font-size: 12px;
@@ -110,27 +107,27 @@ input.playlist--search-input:focus {
   letter-spacing: 1px;
 }
 
-.playlist--table-head {
+.discover--table-head {
   display: grid;
   grid-template-columns: 3fr 1fr 1fr 1fr;
   margin-top: 18px;
 }
 
-.playlist--table-first {
+.discover--table-first {
   display: flex;
   align-items: center;
 }
 
-.playlist--table-header {
+.discover--table-header {
   margin-right: 20px;
 }
 
-.playlist--table-row {
+.discover--table-row {
   margin: 0 5px;
   margin-top: 25px;
 }
 
-.playlist--hr {
+.discover--hr {
   border: 0;
   height: 0;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
@@ -138,12 +135,12 @@ input.playlist--search-input:focus {
   margin-top: 4px;
 }
 
-.playlist--clock {
+.discover--clock {
   margin-right: 32px;
   justify-self: end;
 }
 
-.playlist--table-row:hover {
+.discover--table-row:hover {
   transition: all 0.1s ease-in-out;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 4px;

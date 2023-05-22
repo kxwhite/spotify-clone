@@ -20,6 +20,14 @@ const MusicRow = ({i, id, title, artist, album, date, duration, track, playSong}
     return launchFromToday + " days ago";
   }
 
+   const titleLength = (title) => {
+    if (title.length > 100) {
+      return title.substring(0, 100) + "...";
+    } else {
+      return title;
+    }
+  };
+
   return (
     <div
         className={`musicrow--container ${isHovering === i ? "musicrow--container-hover" : ""}`}
@@ -32,11 +40,11 @@ const MusicRow = ({i, id, title, artist, album, date, duration, track, playSong}
         <div className="musicrow--title-container">
           <img src={track.album.images[0].url} alt={track.album.name} className="musicrow--img" />
           <div className="musicrow--info">
-            <p className="musicrow--title">{track.name}</p>
+            <p className="musicrow--title">{titleLength(String(track.name))}</p>
             <div className="musicrow--artist-container">
               <DownloadForOffline sx={{ fontSize: '18px', color: '#A4A4A4' }} className="musicrow--downarrow-btn"/>
               <p className="musicrow--artist">
-                {track.artists.map((artist) => artist.name).join(", ")}
+                {track.artists.length > 3 ? track.artists.slice(0, 3).map((artist) => artist.name).join(", ") + "..." : track.artists.map((artist) => artist.name).join(", ")}
               </p>
             </div>
           </div>

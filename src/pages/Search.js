@@ -74,7 +74,7 @@ import {
 import SearchCard from '../components/SearchCard'
 import { SearchRounded } from '@mui/icons-material';
 
-function Search() {
+function Search({spotify, refObj}) {
 
     const data = [
       { img: PodcastImg, title: "Podcast", bgColour: "#E23300" },
@@ -149,18 +149,18 @@ function Search() {
     ];
 
   return (
-    <div className="search--body">
-      <div className="searchbar--cont">
-        <SearchRounded sx={{ fontSize: '25px', color: 'black' }} className="searchbar--more-btn searchbar--icon" />
-        <input className='searchbar--input' type="text" placeholder="What do you want to listen to?"/>
+        <div className="search--body">
+        {/* <div className="searchbar--cont">
+          <SearchRounded sx={{ fontSize: '25px', color: 'black' }} className="searchbar--more-btn searchbar--icon" />
+          <input className='searchbar--input' type="text" placeholder="What do you want to listen to?"/>
+        </div> */}
+        <h2 ref={refObj} className='search--page-title'>Browse all</h2>
+        <div className='search--grid'>
+          {data.map((d, index) => {
+            return <SearchCard key={index} img={d.img} title={d.title} bgColour={d.bgColour}/>
+          })}
+        </div>
       </div>
-      <h2 className='search--page-title'>Browse all</h2>
-      <div className='search--grid'>
-        {data.map((d, index) => {
-          return <SearchCard key={index} img={d.img} title={d.title} bgColour={d.bgColour}/>
-        })}
-      </div>
-    </div>
   );
 }
 
