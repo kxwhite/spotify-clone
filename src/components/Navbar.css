@@ -9,7 +9,7 @@
   display: flex;
   justify-content: space-between;
   flex: 0.8;
-  /* z-index: -1; */
+  z-index: 1;
 }
 
 .navbar--container-loggedin {
@@ -22,19 +22,17 @@
   display: flex;
   justify-content: space-between;
   flex: 0.8;
-  /* z-index: -1; */
-}
-
-.navbar--container-loggedin.active {
-  background-color: #101010;
+  z-index: 1;
 }
 
 .nav--bg {
-  background-color: #101010;
+  background-color: #121212;
 }
 
 .nav--arrow-container {
-  margin-left: 22%;
+  margin-left: 330px;
+  display: flex;
+  align-items: center;
 }
 
 .nav--back-arrow, .nav--next-arrow {
@@ -131,4 +129,61 @@
   scale: 1.05;
   opacity: 95%;
   cursor: pointer;
+}
+
+/* Extra CSS */
+.nav--extra-play {
+  display: flex;
+  align-items: center;
+  color: whitesmoke;
+  margin-left: 4px;
+}
+
+.nav--playlist-name {
+  margin-left: 10px;
+}
+
+/* Bottom Table CSS */
+.navbar--table-container {
+  background-color: #1A1A1A;
+  height: 30px;
+  width: 80.4%;
+  position: fixed;
+  padding: 0 36px 0 38px;
+  top: 42px;
+  right: 0;
+  border-bottom: 1px solid #313131;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 0.8;
+  z-index: 1;
+}
+
+.nav--table-header {
+  text-transform: uppercase;
+  color: #A4A4A4;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.nav--table-head {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr 1fr;
+  margin-top: 18px;
+}
+
+.nav--table-first {
+  display: flex;
+  align-items: center;
+}
+
+.nav--table-header {
+  margin-right: 20px;
+}
+
+.nav--clock {
+  margin-right: 32px;
+  justify-self: end;
 }

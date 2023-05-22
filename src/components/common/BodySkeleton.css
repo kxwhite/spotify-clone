@@ -1,9 +1,10 @@
 .skel--body {
   padding: 30px;
+  padding-left: 52px;
   padding-top: 90px;
   height: 100vh;
   overflow-y: overlay;
-  flex: 0.8;
+  flex: 1;
   background-color: #1E1E1E;
   z-index: -2;
 }
@@ -35,6 +36,7 @@
 .skel--overlap-container {
   position: relative;
   flex-grow: 2;
+  margin-bottom: 10px;
 }
 
 .skel--overlap-bottom {
@@ -43,7 +45,7 @@
 
 .skel--overlap-top {
   position: absolute;
-  bottom: 20px;
+  top: -50px;
   left: 8%;
 }
 

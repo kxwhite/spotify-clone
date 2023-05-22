@@ -1,4 +1,4 @@
-.top-artists-card--body {
+.library-card--body {
   background-color: #181818;
   width: 200px;
   height: 250px;
@@ -11,31 +11,31 @@
   position: relative;
 }
 
-.top-artists-card--img {
+.library-card--img {
   object-fit: cover;
   width: 150px;
   height: 150px;
-  border-radius: 50%;
+  border-radius: 4px;
   box-shadow: 0px 4px 8px 4px rgba(0, 0, 0, 0.35);
 }
 
-.top-artists-card--txt-container {
+.library-card--txt-container {
   padding-top: 20px;
   position: absolute;
   bottom: 20px;
-  left: 20px;
+  left: 24px;
 }
 
-.top-artists-card--name {
+.library-card--name {
   color: white;
 }
 
-.top-artists-card--txt {
+.library-card--txt {
   margin-top: 6px;
   color: #767676;
   font-size: 14px;
 }
 
-.top-artists-card--body:hover {
+.library-card--body:hover {
   cursor: pointer;
 }

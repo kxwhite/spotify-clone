@@ -2,11 +2,10 @@
 .search--body {
   height: 100vh;
   overflow-y: overlay;
-  flex: 0.8;
+  flex: 1;
   background-color: #121212;
   padding: 10px 36px 36px 36px;
   color: whitesmoke;
-
 }
 
 .search--grid {
@@ -21,6 +20,7 @@
 }
 
 .search--page-title {
+  /* padding-top: 50px; */
   padding-top: 90px;
 }
 

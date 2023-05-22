@@ -20,7 +20,7 @@ function Sidebar() {
       <div className="sidebar--links">
         <div className='sidebar--link-cont'><Home className='sidebar--icons' sx={{ fontSize: 30 }}/><Link to="/" className='sidebar--link'>Home</Link></div>
         <div className='sidebar--link-cont'><Search className='sidebar--icons' sx={{ fontSize: 30 }}/><Link to="/search" className='sidebar--link'>Search</Link></div>
-        <div className='sidebar--link-cont'><LibraryMusic className='sidebar--icons' sx={{ fontSize: 30 }}/><Link className='sidebar--link'>Your Library</Link></div>
+        <div className='sidebar--link-cont'><LibraryMusic className='sidebar--icons' sx={{ fontSize: 30 }}/><Link to="/playlists" className='sidebar--link'>Your Library</Link></div>
       </div>
 
       <div className="sidebar--playlists">
@@ -43,9 +43,11 @@ function Sidebar() {
       </div>
 
       <div>
-        {playlists?.items?.map(playlist => (
-          <SidebarPlaylists title={playlist.name} key={ playlist.name }/>
-        ))}
+          {playlists?.items?.map(playlist => (
+            <Link to={`/playlists/${playlist.id}`} key={playlist.id}>
+              <SidebarPlaylists title={playlist.name}/>
+            </Link>
+          ))}
       </div>
 
       <div className="sidebar--cookies-country">

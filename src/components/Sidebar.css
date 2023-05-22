@@ -1,8 +1,8 @@
 /* Sidebar Links */
 .sidebar--container {
   background-color: black;
-  width: 240px;
-  /* min-width: 300px; */
+  min-width: 300px;
+  max-width: 300px;
   height: 100vh;
   display: flex;
   flex-direction: column;

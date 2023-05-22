@@ -1,9 +1,55 @@
+/* Main CSS */
 .main--container {
-  display: flex;
-  flex-direction: column;
+  height: 100vh;
+  overflow-y: overlay;
+  flex: 1;
+  background-color: #121212;
+  padding: 10px 36px 36px 36px;
+  color: whitesmoke;
 }
 
-.main--body {
+.main--container::-webkit-scrollbar {
+  display: none;
+}
+
+.main--title {
+  padding-top: 90px;
+}
+
+.main--card-title {
+  padding-top: 20%;
+}
+
+
+.main--liked-para {
   display: flex;
-  flex-grow: 1;
+  flex-direction: column;
+  text-transform: capitalize;
+}
+
+.main--hr {
+  margin-top: 100px;
+  opacity: 10%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Grid CSS */
+.main--grid {
+  display: grid;
+  margin: 0 auto;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.main--grid-first-card {
+  height: 250px;
+  width: 420px;
+  background: rgb(70, 16, 244);
+  background: linear-gradient(130deg, rgba(70, 16, 244, 1) 0%, rgba(139, 138, 229, 1) 100%);
+  border-radius: 8px;
+  padding: 30px;
+  margin-top: 20px;
 }
