@@ -4,7 +4,31 @@ import fbimg from "../assets/login_assets/fbimg.png";
 import appleimg from "../assets/login_assets/appleimg.png";
 import googleimg from "../assets/login_assets/googleimg.png";
 import "../styles/login.css";
+import { useEffect, useState } from "react";
 function Login() {
+  const CLIEND_ID = "d4005cdf0ab146dbb9f266171843ed64";
+  const REDIRECT_URI = "http://localhost:3000";
+  const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
+  const RESPOND_TYPE = "token";
+
+  const [token, setToken] = useState("");
+
+  useEffect(() => {
+    const hash = window.location.hash;
+    let token = window.localStorage.getItem("token");
+
+    if (!token && hash) {
+      token = hash
+        .substring(1)
+        .split("&")
+        .find((elem) => elem.startsWith("access_token"))
+        .split("=")[1];
+
+      window.location.hash = "";
+      window.localStorage("token", token);
+      setToken(token);
+    }
+  }, []);
   return (
     <div>
       <div className="img--container">
@@ -47,7 +71,17 @@ function Login() {
               </a>
               <label className="remember">Remember Me</label>
               <input className="check" type="checkbox" />
-              <button className="btnLogin">LOG IN</button>
+              {!token ? (
+                <button className="btnLogin">
+                  <a
+                    href={`${AUTH_ENDPOINT}?client_id=${CLIEND_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPOND_TYPE}`}
+                  >
+                    LOG IN
+                  </a>
+                </button>
+              ) : (
+                <button>Log Out</button>
+              )}
               <hr id="span3" />
             </div>
             <div className="wrap">
