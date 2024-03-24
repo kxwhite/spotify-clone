@@ -94,35 +94,80 @@ function Footer({ spotify }) {
     });
   };
 
-  return (
-    <div className='footer--main'>
+  const [sliderVolumeVal, setSliderVolumeVal] = React.useState(
+    30
+  );
 
+  const handleVolumeChange = (event, newValue) => {
+    setSliderVolumeVal(newValue);
+  };
+
+  return (
+    <div className="footer--main">
       <div className="footer--album-container">
-        <img src={item?.album.images[0].url} alt={item?.name} className='footer--album'/>
-        {item ?
-        (<div className='footer--artist-info'>
-          <strong className='footer--song-name'>{item?.name}</strong>
-          <p className='footer--artist-name'>{item.artists.map((artist) => artist.name).join(", ")}</p>
-        </div>)
-        :
-        (<div className='footer--artist-info'>
-          <strong className='footer--song-name'>No song is playing</strong>
-          <p className='footer--artist-name'>...</p>
-        </div>)}
-        <FavoriteBorderOutlinedIcon sx={{ color: '#767676', fontSize: 16}} className='footer--icon-style'/>
+        <img
+          src={item?.album.images[0].url}
+          alt={item?.name}
+          className="footer--album"
+        />
+        {item ? (
+          <div className="footer--artist-info">
+            <strong className="footer--song-name">{item?.name}</strong>
+            <p className="footer--artist-name">
+              {item.artists.map((artist) => artist.name).join(", ")}
+            </p>
+          </div>
+        ) : (
+          <div className="footer--artist-info">
+            <strong className="footer--song-name">No song is playing</strong>
+            <p className="footer--artist-name">...</p>
+          </div>
+        )}
+        <FavoriteBorderOutlinedIcon
+          sx={{ color: "#767676", fontSize: 16 }}
+          className="footer--icon-style"
+        />
       </div>
 
       <div className="footer--controls">
         <div className="footer--controls-icons">
-          <ShuffleIcon fontSize='small' sx={{ color: '#A4A4A4' }} className="footer--icon-style"/>
-          <SkipPreviousIcon onClick={skipNext} fontSize='small' sx={{ color: '#A4A4A4' }} className="footer--icon-style"/>
-          {playing ?
-          <PlayCircleIcon onClick={handlePlayPause} fontSize='large' sx={{ color: 'white' }} className="footer--play-btn"/>
-          :
-          <PlayCircleIcon onClick={handlePlayPause} fontSize='large' sx={{ color: 'white' }} className="footer--play-btn"/>
-          }
-          <SkipNextIcon onClick={skipPrevious} fontSize='small' sx={{ color: '#A4A4A4' }} className="footer--icon-style"/>
-          <RepeatIcon fontSize='small' sx={{ color: '#A4A4A4' }} className="footer--icon-style"/>
+          <ShuffleIcon
+            fontSize="small"
+            sx={{ color: "#A4A4A4" }}
+            className="footer--icon-style"
+          />
+          <SkipPreviousIcon
+            onClick={skipNext}
+            fontSize="small"
+            sx={{ color: "#A4A4A4" }}
+            className="footer--icon-style"
+          />
+          {playing ? (
+            <PlayCircleIcon
+              onClick={handlePlayPause}
+              fontSize="large"
+              sx={{ color: "white" }}
+              className="footer--play-btn"
+            />
+          ) : (
+            <PlayCircleIcon
+              onClick={handlePlayPause}
+              fontSize="large"
+              sx={{ color: "white" }}
+              className="footer--play-btn"
+            />
+          )}
+          <SkipNextIcon
+            onClick={skipPrevious}
+            fontSize="small"
+            sx={{ color: "#A4A4A4" }}
+            className="footer--icon-style"
+          />
+          <RepeatIcon
+            fontSize="small"
+            sx={{ color: "#A4A4A4" }}
+            className="footer--icon-style"
+          />
         </div>
         <div className="footer--duration-slider">
           <TinyText>{formatDuration(position)}</TinyText>
@@ -135,16 +180,17 @@ function Footer({ spotify }) {
             max={duration}
             onChange={(_, value) => setPosition(value)}
             sx={{
-              color: theme.palette.mode === 'dark' ? 'rgba(0,0,0,0.87)' : '#A4A4A4',
+              color:
+                theme.palette.mode === "dark" ? "rgba(0,0,0,0.87)" : "#A4A4A4",
               height: 4,
               marginInline: 1,
-              '& .MuiSlider-track': {
-                border: 'none',
+              "& .MuiSlider-track": {
+                border: "none",
               },
-              '& .MuiSlider-thumb': {
-                display: 'none',
-                '&:hover, &.Mui-focusVisible, &.Mui-active': {
-                  boxShadow: 'none',
+              "& .MuiSlider-thumb": {
+                display: "none",
+                "&:hover, &.Mui-focusVisible, &.Mui-active": {
+                  boxShadow: "none",
                 },
               },
             }}
@@ -154,30 +200,48 @@ function Footer({ spotify }) {
       </div>
 
       <div className="footer--volume-controls">
-        <NotesIcon sx={{ color: '#767676', fontSize: 16 }} className="footer--icon-style"/>
-        <DevicesIcon sx={{ color: '#767676', fontSize: 16 }} className="footer--icon-style"/>
-          <VolumeDown sx={{ color: '#767676', fontSize: 16 }} className="footer--icon-style footer--volume"/>
-          <Slider
-            aria-label="Volume"
-            defaultValue={30}
-            sx={{
-              color: theme.palette.mode === 'dark' ? 'rgba(0,0,0,0.87)' : '#A4A4A4',
-              '& .MuiSlider-track': {
-                border: 'none',
+        <NotesIcon
+          sx={{ color: "#767676", fontSize: 16 }}
+          className="footer--icon-style"
+        />
+        <DevicesIcon
+          sx={{ color: "#767676", fontSize: 16 }}
+          className="footer--icon-style"
+        />
+        <VolumeDown
+          sx={{ color: "#767676", fontSize: 16 }}
+          className="footer--icon-style footer--volume"
+        />
+        <Slider
+          aria-label="Volume"
+          value={sliderVolumeVal}
+          defaultValue={30}
+          onChange={handleVolumeChange}
+          sx={{
+            color:
+              theme.palette.mode === "dark" ? "rgba(0,0,0,0.87)" : "#A4A4A4",
+            "& .MuiSlider-track": {
+              border: "none",
+            },
+            "& .MuiSlider-thumb": {
+              display: "none",
+              "&:hover, &.Mui-focusVisible, &.Mui-active": {
+                boxShadow: "none",
               },
-              '& .MuiSlider-thumb': {
-                display: 'none',
-                '&:hover, &.Mui-focusVisible, &.Mui-active': {
-                  boxShadow: 'none',
-                },
-              },
-            }}
-          />
-          <VolumeUp sx={{ color: '#767676', fontSize: 16 }} className="footer--icon-style footer--volume"/>
-        <OpenInFullIcon sx={{ color: '#767676', fontSize: 16 }} className="footer--icon-style"/>
+            },
+          }}
+        />
+        <VolumeUp
+          sx={{ color: "#767676", fontSize: 16 }}
+          className="footer--icon-style footer--volume"
+        />
+        <OpenInFullIcon
+          sx={{ color: "#767676", fontSize: 16 }}
+          className="footer--icon-style"
+        />
       </div>
     </div>
-  )
+  );
 }
 
 export default Footer

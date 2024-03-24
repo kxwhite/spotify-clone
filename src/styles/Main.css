@@ -16,15 +16,18 @@
   padding-top: 90px;
 }
 
-.main--card-title {
-  padding-top: 20%;
+.main--liked-group {
+  position: absolute;
+  bottom: 10px;
 }
-
 
 .main--liked-para {
   display: flex;
   flex-direction: column;
   text-transform: capitalize;
+  max-height: 152px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .main--hr {
@@ -52,4 +55,5 @@
   border-radius: 8px;
   padding: 30px;
   margin-top: 20px;
+  position: relative;
 }

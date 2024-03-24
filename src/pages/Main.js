@@ -32,9 +32,10 @@ function Main({spotify, refObj}) {
               <div className="main--liked-para">
                 {home?.playlists.items.slice(0, 5).map((d) => (d.name)).join(" • ") + "..."}
               </div>
-
+              <div className="main--liked-group">
                 <h2 className='main--card-title'>Liked Songs</h2>
                 <p className="main--clear-para">61 liked songs</p>
+              </div>
             </div>
             {home?.playlists.items.map(d => {
               return (

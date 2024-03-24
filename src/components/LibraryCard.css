@@ -34,6 +34,9 @@
   margin-top: 6px;
   color: #767676;
   font-size: 14px;
+  max-width: 160px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .library-card--body:hover {

@@ -17,6 +17,7 @@ import Footer from "./components/Footer";
 import Sidebar from "./components/Sidebar";
 import Navbar from "./components/Navbar";
 import BodySkeleton from "./components/common/BodySkeleton";
+import LoginButton from "./pages/LoginButton";
 import { useInView } from "react-intersection-observer";
 
 const spotify = new SpotifyWebApi();
@@ -154,7 +155,7 @@ function App() {
     <div className="App">
 
       {!token ? (
-        <Login />
+        <LoginButton />
       ) : (
         <div className="app--container">
           <div className="app--body">
@@ -164,7 +165,7 @@ function App() {
             { loading ?
               (<Routes>
                 <Route path="/" element={<Main refObj={generalNavRef} spotify={spotify}/>}/>
-                <Route path="/signup" element={<SignUp spotify={spotify}/>}/>
+                {/* <Route path="/signup" element={<SignUp spotify={spotify}/>}/> */}
                 <Route path="/search" element={<Search refObj={searchNavRef} spotify={spotify}/>}/>
                 <Route path="/top-artists" element={<TopArtists spotify={spotify}/>}/>
                 <Route path="/top-tracks" element={<TopTracks refObj={generalNavRef} spotify={spotify}/>}/>
