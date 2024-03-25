@@ -17,6 +17,17 @@ function AccountMenu({spotify}) {
      setAnchorEl(null);
    };
 
+  const handleLogout = () => {
+    const url = "https://accounts.spotify.com/en/logout";
+    const spotifyLogoutWindow = window.open(
+      url,
+      "Spotify Logout",
+      "width=700,height=500,top=40,left=40"
+    );
+    document.body.style.display = "none";
+    setTimeout(() => { spotifyLogoutWindow.close(); window.location.href = "/login"; }, 2000);
+  };
+
   return (
     <div>
       <Button
@@ -28,9 +39,14 @@ function AccountMenu({spotify}) {
         sx={{ color: "whitesmoke", padding: 0, minWidth: 30 }}
         disableRipple
       >
-        <Avatar alt={user?.display_name} src={user?.images[0]?.url} sx={{ bgcolor: deepOrange[500], width: 30, height: 30 }} className='nav--avatar'/>
-        <strong className='nav--username'>{user?.display_name}</strong>
-        {open ? <ArrowDropUp /> : <ArrowDropDown /> }
+        <Avatar
+          alt={user?.display_name}
+          src={user?.images[0]?.url}
+          sx={{ bgcolor: deepOrange[500], width: 30, height: 30 }}
+          className="nav--avatar"
+        />
+        <strong className="nav--username">{user?.display_name}</strong>
+        {open ? <ArrowDropUp /> : <ArrowDropDown />}
       </Button>
       <Menu
         id="basic-menu"
@@ -82,7 +98,10 @@ function AccountMenu({spotify}) {
         >
           Account
           <ListItemIcon>
-            <OpenInNew fontSize="small" sx={{ color: "whitesmoke", marginLeft: "120px" }} />
+            <OpenInNew
+              fontSize="small"
+              sx={{ color: "whitesmoke", marginLeft: "120px" }}
+            />
           </ListItemIcon>
         </MenuItem>
         <MenuItem
@@ -111,7 +130,10 @@ function AccountMenu({spotify}) {
         >
           Upgrade to Premium
           <ListItemIcon>
-            <OpenInNew fontSize="small" sx={{ color: "whitesmoke", marginLeft: "39px" }} />
+            <OpenInNew
+              fontSize="small"
+              sx={{ color: "whitesmoke", marginLeft: "39px" }}
+            />
           </ListItemIcon>
         </MenuItem>
         <MenuItem
@@ -127,7 +149,10 @@ function AccountMenu({spotify}) {
         >
           Support
           <ListItemIcon>
-            <OpenInNew fontSize="small" sx={{ color: "whitesmoke", marginLeft: "120px" }} />
+            <OpenInNew
+              fontSize="small"
+              sx={{ color: "whitesmoke", marginLeft: "120px" }}
+            />
           </ListItemIcon>
         </MenuItem>
         <MenuItem
@@ -143,7 +168,10 @@ function AccountMenu({spotify}) {
         >
           Download
           <ListItemIcon>
-            <OpenInNew fontSize="small" sx={{ color: "whitesmoke", marginLeft: "107px" }} />
+            <OpenInNew
+              fontSize="small"
+              sx={{ color: "whitesmoke", marginLeft: "107px" }}
+            />
           </ListItemIcon>
         </MenuItem>
         <MenuItem
@@ -161,7 +189,7 @@ function AccountMenu({spotify}) {
         </MenuItem>
         <Divider sx={{ backgroundColor: "#757575" }} />
         <MenuItem
-          onClick={handleClose}
+          onClick={handleLogout}
           sx={{
             fontSize: 14,
             "&:hover": {
