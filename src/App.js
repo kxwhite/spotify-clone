@@ -165,6 +165,7 @@ function App() {
             { loading ?
               (<Routes>
                 <Route path="/" element={<Main refObj={generalNavRef} spotify={spotify}/>}/>
+                <Route path="/login" element={<LoginButton refObj={generalNavRef}/>}/>
                 {/* <Route path="/signup" element={<SignUp spotify={spotify}/>}/> */}
                 <Route path="/search" element={<Search refObj={searchNavRef} spotify={spotify}/>}/>
                 <Route path="/top-artists" element={<TopArtists spotify={spotify}/>}/>
