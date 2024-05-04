@@ -8,54 +8,71 @@ import SidebarPlaylists from './SidebarPlaylists';
 import { useStateProviderValue } from '../StateProvider';
 
 function Sidebar() {
-
   const [{ playlists }, dispatch] = useStateProviderValue();
-  console.log("playlists =>", playlists);
+  // console.log("playlists =>", playlists);
 
   return (
-    <div className='sidebar--container'>
-      <Link to='/'>
-        <img src={logo} alt="Spotify Logo" className='sidebar--logo'/>
+    <div className="sidebar--container">
+      <Link to="/">
+        <img src={logo} alt="Spotify Logo" className="sidebar--logo" />
       </Link>
       <div className="sidebar--links">
-        <div className='sidebar--link-cont'><Home className='sidebar--icons' sx={{ fontSize: 30 }}/><Link to="/" className='sidebar--link'>Home</Link></div>
-        <div className='sidebar--link-cont'><Search className='sidebar--icons' sx={{ fontSize: 30 }}/><Link to="/search" className='sidebar--link'>Search</Link></div>
-        <div className='sidebar--link-cont'><LibraryMusic className='sidebar--icons' sx={{ fontSize: 30 }}/><Link to="/playlists" className='sidebar--link'>Your Library</Link></div>
+        <div className="sidebar--link-cont">
+          <Home className="sidebar--icons" sx={{ fontSize: 30 }} />
+          <Link to="/" className="sidebar--link">
+            Home
+          </Link>
+        </div>
+        <div className="sidebar--link-cont">
+          <Search className="sidebar--icons" sx={{ fontSize: 30 }} />
+          <Link to="/search" className="sidebar--link">
+            Search
+          </Link>
+        </div>
+        <div className="sidebar--link-cont">
+          <LibraryMusic className="sidebar--icons" sx={{ fontSize: 30 }} />
+          <Link to="/playlists" className="sidebar--link">
+            Your Library
+          </Link>
+        </div>
       </div>
 
       <div className="sidebar--playlists">
-        <br/>
-        <p className='sidebar--title'>Playlists</p>
+        <br />
+        <p className="sidebar--title">Playlists</p>
 
-        <div className='sidebar--link-cont sidebar--create'>
-          <AddBox className='sidebar--icons' sx={{ fontSize: 30 }}/>
-          <Link className='sidebar--link'>Create Playlist</Link>
+        <div className="sidebar--link-cont sidebar--create">
+          <AddBox className="sidebar--icons" sx={{ fontSize: 30 }} />
+          <Link className="sidebar--link">Create Playlist</Link>
         </div>
 
-        <div className='sidebar--link-cont sidebar--create sidebar--opacity'>
-          <div className='sidebar--fav'>
-            <Favorite className='sidebar--icons sidebar--fav-icon' sx={{ fontSize: 16 }}/>
+        <div className="sidebar--link-cont sidebar--create sidebar--opacity">
+          <div className="sidebar--fav">
+            <Favorite
+              className="sidebar--icons sidebar--fav-icon"
+              sx={{ fontSize: 16 }}
+            />
           </div>
-          <Link className='sidebar--link'>Liked Songs</Link>
+          <Link className="sidebar--link">Liked Songs</Link>
         </div>
 
-        <hr className='sidebar--hr'/>
+        <hr className="sidebar--hr" />
       </div>
 
       <div>
-          {playlists?.items?.map(playlist => (
-            <Link to={`/playlists/${playlist.id}`} key={playlist.id}>
-              <SidebarPlaylists title={playlist.name}/>
-            </Link>
-          ))}
+        {playlists?.items?.map((playlist) => (
+          <Link to={`/playlists/${playlist.id}`} key={playlist.id}>
+            <SidebarPlaylists title={playlist.name} />
+          </Link>
+        ))}
       </div>
 
       <div className="sidebar--cookies-country">
-        <Link className='sidebar--cookies'>Cookies</Link>
+        <Link className="sidebar--cookies">Cookies</Link>
         <CustomizedDialogs />
       </div>
     </div>
-  )
+  );
 }
 
 export default Sidebar

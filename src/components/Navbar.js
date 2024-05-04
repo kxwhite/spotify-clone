@@ -1,14 +1,45 @@
-import React, { useState } from 'react'
-import { Link, useNavigate } from "react-router-dom";
+import React, { useEffect, useRef, useState } from 'react'
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import './Navbar.css'
 import { AccessTime, NavigateBefore, NavigateNext, PlayCircle, SearchRounded } from '@mui/icons-material';
 import AccountMenu from './common/AccountMenu';
 import { useStateProviderValue } from '../StateProvider';
+import { InView } from 'react-intersection-observer';
 
 function Navbar({spotify, token, setToken, inView, generalInView, searchInView, passColourData, passPlaylistName}) {
   const [{ user }, dispatch] = useStateProviderValue();
 
+  const [inViewState, setInViewState] = useState(inView);
+
   const navigate = useNavigate();
+  const location = useLocation();
+  const prevPathnameRef = useRef(null);
+
+  // console.log("Location Name: ", location.pathname);
+
+  // console.log("InView: ", inView);
+
+
+  // setInViewState(inView);
+  // console.log("InViewState: ", inViewState);
+
+  // useEffect(() => {
+  //   if(prevPathnameRef.current !== location.pathname) {
+  //     setInViewState(true);
+  //   };
+
+  //   prevPathnameRef.current = location.pathname;
+  // }, [location.pathname]);
+
+  // const [visibleSection, setVisibleSection] = useState(prevPathnameRef.current);
+
+  // const setInView = (inView, entry) => {
+  //   if (inView) {
+  //     console.log("Entry =>", entry);
+  //     setVisibleSection(entry.target.getAttribute("id"));
+  //   }
+  // };
+
 
   const handleLogout = () => {
     setToken("");
@@ -46,7 +77,11 @@ function Navbar({spotify, token, setToken, inView, generalInView, searchInView, 
                 sx={{ fontSize: "60px", color: "#1EB954" }}
                 className="playlist--play-btn"
               />
-              <h2 className="nav--playlist-name">{passPlaylistName}</h2>
+              <h2 className="nav--playlist-name">
+                {passPlaylistName?.length > 50
+                  ? passPlaylistName.substring(0, 30) + "..."
+                  : passPlaylistName}
+              </h2>
             </div>
           ) : null}
           {!searchInView ? (
@@ -85,7 +120,7 @@ function Navbar({spotify, token, setToken, inView, generalInView, searchInView, 
               </button>
             ) : (
               <button className="nav--btn-login" onClick={handleLogout}>
-                  Log Out
+                Log Out
               </button>
             )}
           </div>

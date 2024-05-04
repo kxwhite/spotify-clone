@@ -18,7 +18,7 @@ import Sidebar from "./components/Sidebar";
 import Navbar from "./components/Navbar";
 import BodySkeleton from "./components/common/BodySkeleton";
 import LoginButton from "./pages/LoginButton";
-import { useInView } from "react-intersection-observer";
+import { useInView, defaultFallbackInView } from "react-intersection-observer";
 
 const spotify = new SpotifyWebApi();
 
@@ -82,6 +82,13 @@ function App() {
         dispatch({
           type: "SET_TOP_TRACKS",
           top_tracks: response,
+        });
+      });
+
+      spotify.getMySavedTracks({ limit : 20, offset: 1 }).then((response) => {
+        dispatch({
+          type: "SET_FAVE_TRACKS",
+          fave_tracks: response,
         });
       });
 
@@ -166,7 +173,6 @@ function App() {
               (<Routes>
                 <Route path="/" element={<Main refObj={generalNavRef} spotify={spotify}/>}/>
                 <Route path="/login" element={<LoginButton refObj={generalNavRef}/>}/>
-                {/* <Route path="/signup" element={<SignUp spotify={spotify}/>}/> */}
                 <Route path="/search" element={<Search refObj={searchNavRef} spotify={spotify}/>}/>
                 <Route path="/top-artists" element={<TopArtists spotify={spotify}/>}/>
                 <Route path="/top-tracks" element={<TopTracks refObj={generalNavRef} spotify={spotify}/>}/>

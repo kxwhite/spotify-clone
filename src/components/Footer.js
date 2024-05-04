@@ -1,15 +1,18 @@
 import React, { useEffect } from 'react'
 import './Footer.css'
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShuffleIcon from "@mui/icons-material/Shuffle";
 import SkipPreviousIcon from "@mui/icons-material/SkipPrevious";
 import PlayCircleIcon from "@mui/icons-material/PlayCircle";
+import PauseCircleIcon from "@mui/icons-material/PauseCircle";
 import SkipNextIcon from "@mui/icons-material/SkipNext";
 import RepeatIcon from "@mui/icons-material/Repeat";
 import NotesIcon from "@mui/icons-material/Notes";
 import DevicesIcon from "@mui/icons-material/Devices";
 import OpenInFullIcon from "@mui/icons-material/OpenInFull";
 import { VolumeDown, VolumeUp } from '@mui/icons-material';
+import RepeatOneIcon from "@mui/icons-material/RepeatOne";
 import { Slider, styled, Typography, useTheme } from '@mui/material';
 import { useStateProviderValue } from '../StateProvider';
 
@@ -23,16 +26,34 @@ const TinyText = styled(Typography)({
 });
 
 function Footer({ spotify }) {
-  const theme = useTheme();
-  const duration = 200; // seconds
-  const [position, setPosition] = React.useState(32);
-  function formatDuration(value) {
-    const minute = Math.floor(value / 60);
-    const secondLeft = value - minute * 60;
-    return `${minute}:${secondLeft < 10 ? `0${secondLeft}` : secondLeft}`;
-  }
+  const [{ token, item, playing, progress }, dispatch] = useStateProviderValue();
 
-  const [{ token, item, playing }, dispatch] = useStateProviderValue();
+  const theme = useTheme();
+
+  const duration = item?.duration_ms;
+  const [position, setPosition] = React.useState(progress);
+
+  const [shuffleState, setShuffleState] = React.useState(true);
+  const [faveTrack, setFaveTrack] = React.useState(false);
+
+  const [clickCount, setClickCount] = React.useState(0);
+  const [repeatState, setRepeatState] = React.useState(false);
+  const [repeatStack, setRepeatStack] = React.useState([
+    {icon: RepeatIcon, color: "#A4A4A4" },
+    {icon: RepeatIcon, color: "#1BD860" },
+    {icon: RepeatOneIcon, color: "#1BD860" }
+  ]);
+
+  function formatDuration(value) {
+    if (isNaN(value) || value < 0) {
+      return "0:00";
+    }
+
+    const seconds = Math.floor(value / 1000);
+    const minute = Math.floor(seconds / 60);
+    const formattedSeconds = (seconds % 60).toString().padStart(2, "0");
+    return `${minute}:${formattedSeconds}`;
+  }
 
   useEffect(() => {
     spotify.getMyCurrentPlaybackState().then((r) => {
@@ -48,7 +69,24 @@ function Footer({ spotify }) {
         item: r.item,
       });
     });
-  }, [spotify]);
+
+    const updatePosition = () => {
+      spotify.getMyCurrentPlaybackState().then((r) => {
+        dispatch({
+          type: "SET_PROGRESS",
+          progress: r.progress_ms,
+        });
+
+        setPosition(r.progress_ms);
+      });
+    };
+    updatePosition();
+
+    const intervalId = setInterval(updatePosition, 1000);
+    return () => clearInterval(intervalId);
+
+  }, []);
+
 
   const handlePlayPause = () => {
     if (playing) {
@@ -94,11 +132,145 @@ function Footer({ spotify }) {
     });
   };
 
-  const [sliderVolumeVal, setSliderVolumeVal] = React.useState(
-    30
-  );
+
+  const repeatTrack = () => {
+    spotify.getMyCurrentPlayingTrack().then((r) => {
+      dispatch({
+        type: "SET_ITEM",
+        item: r.item,
+      });
+      dispatch({
+        type: "SET_PLAYING",
+        playing: true,
+      });
+      setClickCount((prevCount) => prevCount + 1);
+
+      if (clickCount === 0) {
+        spotify.setRepeat("off");
+        setRepeatState(true);
+        setRepeatStack((prevStack) => ({
+          ...prevStack,
+          icon: RepeatIcon,
+          color: "#A4A4A4",
+        }));
+      } else if (clickCount === 1) {
+        spotify.setRepeat("track");
+        setRepeatStack((prevStack) => ({
+          ...prevStack,
+          icon: RepeatIcon,
+          color: "#1BD860",
+        }));
+      } else if (clickCount === 2) {
+        spotify.setRepeat("context");
+        setRepeatState(false);
+        setRepeatStack((prevStack) => ({
+          ...prevStack,
+          icon: RepeatOneIcon,
+          color: "#1BD860",
+        }));
+        setClickCount(0);
+      }
+      console.log("ClickCount =>", clickCount);
+    });
+  };
+
+  const { icon: IconComponent, color } = repeatStack[clickCount];
+
+  const shuffleTrack = () => {
+    spotify.setShuffle(shuffleState);
+    spotify.getMyCurrentPlayingTrack().then((r) => {
+      dispatch({
+        type: "SET_ITEM",
+        item: r.item,
+      });
+      dispatch({
+        type: "SET_PLAYING",
+        playing: true,
+      });
+      setShuffleState(!shuffleState);
+    });
+  };
+
+  // const handleFavouriteTrack = ([id]) => {
+  //   if (faveTrack) {
+  //     spotify.removeFromMySavedTracks(id);
+  //     spotify.getMyCurrentPlayingTrack().then((r) => {
+  //       dispatch({
+  //         type: "SET_FAVE_TRACKS",
+  //         fave_tracks: r.item,
+  //       });
+  //     });
+  //     setFaveTrack(!faveTrack);
+  //     console.log("Item ID =>", item?.id);
+  //     console.log("TypeOf Item ID =>", typeof item?.id);
+  //   } else {
+  //     spotify.addToMySavedTracks(id);
+  //     spotify.getMyCurrentPlayingTrack().then((r) => {
+  //       dispatch({
+  //         type: "SET_FAVE_TRACKS",
+  //         fave_tracks: r.item,
+  //       });
+  //     });
+  //     setFaveTrack(!faveTrack);
+  //     console.log("Item ID =>", item?.id);
+  //     console.log("TypeOf Item ID =>", typeof item?.id);
+  //   }
+  // };
+
+  const addFavouriteTrack = (id) => {
+    spotify.addToMySavedTracks(id).then(() => {
+      spotify.getMyCurrentPlayingTrack().then((r) => {
+        dispatch({
+          type: "SET_FAVE_TRACKS",
+          fave_tracks: r.item,
+        });
+        setFaveTrack(!faveTrack);
+      });
+    });
+  };
+
+  // const removeFavouriteTrack = (id) => {
+  //   spotify
+  //     .containsMySavedTracks([id])
+  //     .then((r) => {
+  //       const trackIsInSavedMusic = r.body[0];
+  //       console.log("Body => " + r.body);
+
+  //       if (trackIsInSavedMusic) {
+  //         console.log("Track was found in the user's Your Music library");
+  //         spotify.removeFromMySavedTracks(id).then(() => {
+  //           spotify.getMyCurrentPlayingTrack().then((r) => {
+  //             dispatch({
+  //               type: "SET_FAVE_TRACKS",
+  //               fave_tracks: r.item,
+  //             });
+  //             setFaveTrack(!faveTrack);
+  //           });
+  //         });
+  //       } else {
+  //         console.log("Track was not found.");
+  //       }
+  //     })
+  //     .catch((err) => {
+  //       console.log("Something went wrong!", err);
+  //     });
+  // };
+
+  const seekPosition = (positionMs) => {
+    spotify.seek(positionMs).then((r) => {
+      dispatch({
+        type: "SET_PROGRESS",
+        progress: r.progress_ms,
+      });
+
+      setPosition(positionMs.progress_ms);
+    });
+  };
+
+  const [sliderVolumeVal, setSliderVolumeVal] = React.useState(30);
 
   const handleVolumeChange = (event, newValue) => {
+    spotify.setVolume(newValue);
     setSliderVolumeVal(newValue);
   };
 
@@ -124,25 +296,40 @@ function Footer({ spotify }) {
           </div>
         )}
         <FavoriteBorderOutlinedIcon
+          onClick={() => addFavouriteTrack(item?.id)}
           sx={{ color: "#767676", fontSize: 16 }}
           className="footer--icon-style"
         />
+        {/* {!faveTrack ? (
+          <FavoriteBorderOutlinedIcon
+            onClick={() => handleFavouriteTrack(item?.id)}
+            sx={{ color: "#767676", fontSize: 16 }}
+            className="footer--icon-style"
+          />
+        ) : (
+          <FavoriteIcon
+            onClick={() => handleFavouriteTrack(item?.id)}
+            sx={{ color: "whitesmoke", fontSize: 16 }}
+            className="footer--icon-style"
+          />
+        )} */}
       </div>
 
       <div className="footer--controls">
         <div className="footer--controls-icons">
           <ShuffleIcon
+            onClick={shuffleTrack}
             fontSize="small"
-            sx={{ color: "#A4A4A4" }}
+            sx={{ color: `${!shuffleState ? "#1BD860" : "#A4A4A4"}` }}
             className="footer--icon-style"
           />
           <SkipPreviousIcon
-            onClick={skipNext}
+            onClick={skipPrevious}
             fontSize="small"
             sx={{ color: "#A4A4A4" }}
             className="footer--icon-style"
           />
-          {playing ? (
+          {!playing ? (
             <PlayCircleIcon
               onClick={handlePlayPause}
               fontSize="large"
@@ -150,7 +337,7 @@ function Footer({ spotify }) {
               className="footer--play-btn"
             />
           ) : (
-            <PlayCircleIcon
+            <PauseCircleIcon
               onClick={handlePlayPause}
               fontSize="large"
               sx={{ color: "white" }}
@@ -158,14 +345,15 @@ function Footer({ spotify }) {
             />
           )}
           <SkipNextIcon
-            onClick={skipPrevious}
+            onClick={skipNext}
             fontSize="small"
             sx={{ color: "#A4A4A4" }}
             className="footer--icon-style"
           />
-          <RepeatIcon
+          <IconComponent
+            onClick={repeatTrack}
             fontSize="small"
-            sx={{ color: "#A4A4A4" }}
+            sx={{ color: color }}
             className="footer--icon-style"
           />
         </div>
@@ -176,9 +364,10 @@ function Footer({ spotify }) {
             size="small"
             value={position}
             min={0}
-            step={1}
+            step={1000}
             max={duration}
             onChange={(_, value) => setPosition(value)}
+            onChangeCommitted={(_, value) => seekPosition(value)}
             sx={{
               color:
                 theme.palette.mode === "dark" ? "rgba(0,0,0,0.87)" : "#A4A4A4",
@@ -186,6 +375,10 @@ function Footer({ spotify }) {
               marginInline: 1,
               "& .MuiSlider-track": {
                 border: "none",
+                "&:hover, &.Mui-focusVisible, &.Mui-active": {
+                  boxShadow: "none",
+                  backgroundColor: "#1BD860",
+                },
               },
               "& .MuiSlider-thumb": {
                 display: "none",
@@ -195,7 +388,7 @@ function Footer({ spotify }) {
               },
             }}
           />
-          <TinyText>-{formatDuration(duration - position)}</TinyText>
+          <TinyText>{formatDuration(duration)}</TinyText>
         </div>
       </div>
 
@@ -222,6 +415,9 @@ function Footer({ spotify }) {
               theme.palette.mode === "dark" ? "rgba(0,0,0,0.87)" : "#A4A4A4",
             "& .MuiSlider-track": {
               border: "none",
+              "&:hover, &.Mui-focusVisible, &.Mui-active": {
+                backgroundColor: "#1BD860",
+              },
             },
             "& .MuiSlider-thumb": {
               display: "none",

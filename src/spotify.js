@@ -3,9 +3,9 @@ export const authEndpoint = "https://accounts.spotify.com/authorize";
 
 const clientId = "d4005cdf0ab146dbb9f266171843ed64";
 
+// const redirectUri = "https://kxw-spotify-clone.netlify.app/";
+/* Local Testing - Change here and on Spotify Dashboard */
 const redirectUri = "https://kxw-spotify-clone.netlify.app/";
-/* FOR TESTING LOCALLY */
-// const redirectUri = "http://localhost:3000";
 
 const scopes = [
   "user-read-currently-playing",
@@ -15,6 +15,8 @@ const scopes = [
   "user-modify-playback-state",
   "user-read-email",
   "user-read-private",
+  "user-library-read",
+  "user-library-modify",
   "user-read-playback-position",
   "playlist-read-private",
   "playlist-read-collaborative",

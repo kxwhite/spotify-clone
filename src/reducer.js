@@ -10,6 +10,8 @@ export const initialState = {
   item: null,
   search: null,
   home: null,
+  progress: null,
+  fave_tracks: null,
   // REMOVE AFTER TESTING
   // token: "BQCVMfeBfdtU1FYpYaym4o1y6QPv4ibK6x1n6fvCsaJtZG7UIc…jNqlTMfZ9ywhA6yikvijidqPd2RqwisxnjAwWxb4i1-oSDE5M",
 };
@@ -59,6 +61,12 @@ const reducer = (state, action) => {
         top_tracks: action.top_tracks,
       };
 
+    case "SET_FAVE_TRACKS":
+      return {
+        ...state,
+        fave_tracks: action.fave_tracks,
+      };
+
     case "SET_TOP_ARTISTS":
       return {
         ...state,
@@ -87,6 +95,11 @@ const reducer = (state, action) => {
       return {
         ...state,
         playlist: action.playlist,
+      };
+    case "SET_PROGRESS":
+      return {
+        ...state,
+        progress: action.progress,
       };
     default:
       return state;

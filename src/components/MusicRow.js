@@ -32,7 +32,7 @@ const MusicRow = ({i, id, title, artist, album, date, duration, track, playSong}
     <div
         className={`musicrow--container ${isHovering === i ? "musicrow--container-hover" : ""}`}
         onMouseEnter={() => setIsHovering(i)} onMouseLeave={() => setIsHovering(-1)}
-        onClick={() => playSong(track?.id)}
+        onClick={() => playSong(track.id)}
     >
       <div className="musicrow--first">
         {hovering ? <p className="musicrow--id">{id}</p>

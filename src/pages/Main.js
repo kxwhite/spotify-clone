@@ -23,7 +23,6 @@ function Main({spotify, refObj}) {
     }, 500);
   }, [spotify])
 
-
   return (
     <div className="main--container">
       <h2 ref={refObj} className='main--title'>Playlists</h2>
