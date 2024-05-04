@@ -140,7 +140,11 @@
 }
 
 .nav--playlist-name {
+  /* max-width: calc(100% - 260px); */
   margin-left: 10px;
+  text-wrap: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* Bottom Table CSS */

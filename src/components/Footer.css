@@ -58,17 +58,20 @@
 
 .footer--icon-style:hover {
   color: whitesmoke;
+  cursor: pointer;
 }
 
 .footer--play-btn:hover {
   transition: scale 0.2s ease-in-out;
   scale: 1.2;
+  cursor: pointer;
 }
 
 .footer--duration-slider {
   display: flex;
   align-items: center;
 }
+
 /* Volume CSS */
 .footer--volume-controls {
   flex: 0.3;

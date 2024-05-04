@@ -33,6 +33,7 @@ function Playlist({spotify, refObj, colourData, playlistName}) {
         spotify.setAccessToken(token);
         const response = await spotify.getPlaylist(id);
         setPlaylistState({
+          id: response?.id,
           img: response?.images[0].url,
           name: response?.name,
           description: response?.description,
@@ -106,7 +107,8 @@ function Playlist({spotify, refObj, colourData, playlistName}) {
   const playPlaylist = (id) => {
   spotify
   .play({
-      context_uri: `spotify:playlist:37i9dQZEVXcQ9COmYvdajy`,
+      // context_uri: `spotify:playlist:37i9dQZEVXcQ9COmYvdajy`,
+      context_uri: `spotify:playlist:${id}`,
     })
     .then((res) => {
       spotify.getMyCurrentPlayingTrack().then((r) => {
@@ -202,7 +204,7 @@ function Playlist({spotify, refObj, colourData, playlistName}) {
           <div className="playlist--bottom-section" style={{ background: `linear-gradient(180deg, ${thirdBackgroundColor} 0%, rgba(18, 18, 18, 1) 15%)` }}>
             <div className="playlist--play-nav">
               <div className="playlist--play-nav-left">
-                <PlayCircle onClick={playPlaylist} sx={{ fontSize: "60px", color: "#1EB954" }} className="playlist--play-btn"/>
+                <PlayCircle onClick={() => playPlaylist(playlistState?.id)} sx={{ fontSize: "60px", color: "#1EB954" }} className="playlist--play-btn"/>
                 <DownloadForOffline sx={{ fontSize: "30px", color: "#1EB954" }} className="playlist--downarrow-btn"/>
                 <MoreHoriz sx={{ fontSize: "20px", color: "#767676" }} className="playlist--more-btn"/>
               </div>
