@@ -165,6 +165,8 @@ function Playlist({spotify, refObj, colourData, playlistName}) {
     }, 500);
   }, []);
 
+  let includesATag = playlistState?.description?.includes("</a>");
+
   return (
     <>
       { loading ?
@@ -181,7 +183,7 @@ function Playlist({spotify, refObj, colourData, playlistName}) {
                 {titleLength(String(playlistState?.name))}
               </h1>
               <div className="banner--info">
-                <p className="banner--para">{playlistState?.description}</p>
+                <p className="banner--para">{!includesATag && playlistState?.description}</p>
                 <div className="banner--user-section">
                   <Avatar
                     alt={playlistState?.name}
